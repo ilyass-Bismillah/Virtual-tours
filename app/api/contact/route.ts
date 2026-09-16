@@ -1,10 +1,17 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
   try {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json(
+        { error: "Resend API key is not configured." },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(apiKey);
     const body = await req.json();
     const { firstName, lastName, email, phone, projectType, budgetRange, message } = body;
 
@@ -16,8 +23,8 @@ export async function POST(req: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "Virtual Tours <onboarding@resend.dev>", 
-      to: ["delivered@resend.dev"],
+      from: "Virtual Tours <onboarding@resend.dev>",
+      to: ["delivered@resend.dev"], 
       replyTo: email,
       subject: `New Project Inquiry: ${firstName} ${lastName} (${projectType || "General"})`,
       html: `
@@ -42,10 +49,8 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ success: true, data });
-  } catch (err: any) {
-    return NextResponse.json(
-      { error: err?.message || "Internal server error" },
-      { status: 500 }
-    );
+  } catch (err) {
+    const errorMessage = err instanceof Error ? err.message : "Internal server error";
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }

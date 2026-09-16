@@ -41,13 +41,13 @@ function Counter({ target }: { target: number }) {
     if (!isInView) return;
 
     let startTime: number | null = null;
-    const duration = 2000; // مدة الحركة 2 ثواني
+    const duration = 2000; 
 
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
 
-      // Easing function (easeOutExpo) لحركة ناعمة
+      // Easing function (easeOutExpo) 
       const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       const currentVal = Math.floor(easeOut * target);
 

@@ -144,7 +144,7 @@ export default function GallerySection() {
                 ease: "easeOut",
               }}
               onClick={() => setSelectedImage(project)}
-              className="group relative aspect-[16/10] rounded-2xl overflow-hidden bg-[#161413] cursor-pointer will-change-transform"
+              className="group relative aspect-16/10 rounded-2xl overflow-hidden bg-[#161413] cursor-pointer will-change-transform"
             >
               {/* Image */}
               <Image
@@ -156,7 +156,7 @@ export default function GallerySection() {
               />
 
               {/* Dark Gradient Overlay for Hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Bottom Text Content */}
               <div className="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
@@ -191,7 +191,7 @@ export default function GallerySection() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="relative w-full max-w-5xl aspect-[16/10] max-h-[85vh] rounded-3xl overflow-hidden shadow-2xl border border-white/10 z-10 bg-black"
+              className="relative w-full max-w-5xl aspect-16/10 max-h-[85vh] rounded-3xl overflow-hidden shadow-2xl border border-white/10 z-10 bg-black"
             >
               <Image
                 src={selectedImage.image}
@@ -211,7 +211,7 @@ export default function GallerySection() {
               </button>
 
               {/* Lightbox Caption */}
-              <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-linear-to-t from-black/90 via-black/50 to-transparent">
                 <h4 className="font-serif text-2xl text-white">
                   {selectedImage.title}
                 </h4>

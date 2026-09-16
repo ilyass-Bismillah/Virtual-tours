@@ -10,7 +10,6 @@ import {
   Maximize,
   Minimize,
   Info,
-  Sparkles,
   CheckCircle2,
   X,
 } from "lucide-react";

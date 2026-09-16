@@ -40,7 +40,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "bg-dark-bg/80 backdrop-blur-md border-b border-white/10 py-3 shadow-2xl"
-            : "bg-linear-to-b from-[#0F0E0E]/90 to-transparent py-5"
+            : "bg-linear-to-b from-dark-bg/90 to-transparent py-5"
         }`}
       >
         <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-lg max-w-sm mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -49,7 +49,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
             href="#hero"
             className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#E05A36] to-[#99341B] flex items-center justify-center text-white shadow-lg shadow-terracotta/20 group-hover:shadow-terracotta/40 transition-all duration-300">
+            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-terracotta to-[#99341B] flex items-center justify-center text-white shadow-lg shadow-terracotta/20 group-hover:shadow-terracotta/40 transition-all duration-300">
               <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" />
             </div>
             <div className="">
@@ -68,7 +68,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
                 className="text-sm font-medium text-[#F5F3F0]/80 hover:text-terracotta transition-colors duration-300 relative group py-1"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-terracotta transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-terracotta transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -113,7 +113,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-[65px] z-40 bg-dark-bg/95 backdrop-blur-xl border-b border-white/10 md:hidden py-6 px-6 shadow-2xl"
+            className="fixed inset-x-0 top-16.25 z-40 bg-dark-bg/95 backdrop-blur-xl border-b border-white/10 md:hidden py-6 px-6 shadow-2xl"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (

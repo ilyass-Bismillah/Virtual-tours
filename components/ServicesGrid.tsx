@@ -49,7 +49,7 @@ export default function ServicesGrid() {
       deliverables:
         "Web-ready HTML5 viewer, iframe embeds, and offline standalone executable",
       image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop",
+        "/image5.avif",
     },
     {
       id: "renders",
@@ -67,7 +67,7 @@ export default function ServicesGrid() {
       deliverables:
         "8K UHD Still Renderings, 360° Panoramic Panoramas & Animated Flythrough Videos",
       image:
-        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000&auto=format&fit=crop",
+        "/image8.avif",
     },
     {
       id: "scans",
@@ -85,7 +85,7 @@ export default function ServicesGrid() {
       deliverables:
         "Matterport Pro Space, BIM/CAD Point Cloud Data & Aerial Orthomosaics",
       image:
-        "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1000&auto=format&fit=crop",
+        "/image7.avif",
     },
     {
       id: "floorplans",
@@ -103,7 +103,7 @@ export default function ServicesGrid() {
       deliverables:
         "Interactive Web SVG Overlay, High-Res Vector PDFs & DXF CAD drawings",
       image:
-        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop",
+        "/image3.avif",
     },
     {
       id: "vr",
@@ -121,7 +121,7 @@ export default function ServicesGrid() {
       deliverables:
         "Standalone Vision Pro & WebXR VR Packages for showroom presentations",
       image:
-        "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=1000&auto=format&fit=crop",
+        "/image9.avif",
     },
     {
       id: "retail",
@@ -138,7 +138,7 @@ export default function ServicesGrid() {
       ],
       deliverables: "Shoppable Spatial Web Portal & Analytics Dashboard Access",
       image:
-        "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?q=80&w=1000&auto=format&fit=crop",
+        "/image10.avif",
     },
   ];
 
@@ -238,7 +238,7 @@ export default function ServicesGrid() {
                   fill
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-[#1A1918] via-[#1A1918]/60 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-dark-surface via-dark-surface/60 to-transparent" />
                 <button
                   onClick={() => setSelectedService(null)}
                   className="absolute top-4 right-4 p-2.5 rounded-full bg-black/60 hover:bg-black text-white border border-white/20 transition-colors"

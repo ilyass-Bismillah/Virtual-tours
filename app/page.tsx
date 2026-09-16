@@ -29,7 +29,7 @@ export default function Home() {
       <Navbar onBookDemoClick={handleBookDemoClick} />
 
       {/* 1. Hero Section */}
-      <HeroSection onWatchShowreel={() => setShowreelOpen(true)} />
+      <HeroSection />
 
       {/* 2. What We Offer (Services Grid) */}
       <ServicesGrid />

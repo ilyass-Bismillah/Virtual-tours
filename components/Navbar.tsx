@@ -44,7 +44,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
             : "bg-linear-to-b from-dark-bg/90 to-transparent py-5"
         }`}
       >
-        <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-lg max-w-sm mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="2xl:max-w-7xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <a
             href="#hero"
@@ -55,13 +55,13 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
             </div>
             <div>
               <span className="font-serif text-2xl font-bold tracking-wider text-white flex items-center gap-1">
-                Parallax
+                Vortex <span className="text-terracotta">3D</span> tours
               </span>
             </div>
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-8 glass-card px-6 py-2 rounded-full border-white/10">
+          <nav className="hidden lg:flex items-center gap-8 glass-card px-6 py-2 rounded-full border-white/10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -86,10 +86,9 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
           >
             <Button
               variant={"linear"}
-              className="hidden md:flex items-center gap-4 py-6 px-5"
+              className="hidden lg:flex items-center gap-4 py-6 px-5"
             >
               <span>Demander un devis</span>
-              <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </a>
 
@@ -97,7 +96,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg bg-dark-surface border border-white/10 text-white hover:text-terracotta focus:outline-none cursor-pointer"
+            className="lg:hidden p-2 rounded-lg bg-dark-surface border border-white/10 text-white hover:text-terracotta focus:outline-none cursor-pointer"
             aria-label="Ouvrir le menu de navigation"
           >
             {mobileMenuOpen ? (
@@ -117,7 +116,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-16.25 z-40 bg-dark-bg/95 backdrop-blur-xl border-b border-white/10 md:hidden py-6 px-6 shadow-2xl"
+            className="fixed inset-x-0 top-16.25 z-40 bg-dark-bg/95 backdrop-blur-xl border-b border-white/10 lg:hidden py-6 px-6 shadow-2xl"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (

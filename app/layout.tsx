@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import BackToTop from "@/components/back-to-top";
@@ -10,25 +10,30 @@ const fontSerif = Cormorant_Garamond({
   variable: "--font-serif",
 });
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "AURA 3D | Ultra-Luxury 3D Virtual Tours & Architectural Visualization",
+  title: "Vortex 3D Tours — Visites Virtuelles 3D & Expériences Immersives",
+  icons: {
+    icon: "/virtual-reality.png", 
+  },
   description:
-    "Elevate your real estate, architectural, and hospitality spaces with hyper-realistic 360° virtual tours, Matterport scanning, VR experiences, and 3D architectural visual renderings.",
+    "Sublimez vos projets immobiliers, d'architecture et d'hôtellerie grâce à nos visites virtuelles 360°, scans Matterport LiDAR, rendus 3D photoréalistes et expériences VR.",
   keywords: [
-    "3D Virtual Tours",
-    "Architectural Visualization",
-    "Matterport Scans",
-    "Luxury Real Estate Tours",
-    "360 Degree Walkthroughs",
-    "VR Architecture",
+    "Visite virtuelle 3D",
+    "Rendus architecturaux 3D",
+    "Scan Matterport LiDAR",
+    "Immobilier de prestige",
+    "Visite immersive 360",
+    "Expérience VR",
+    "Jumeau numérique",
   ],
   openGraph: {
-    title: "AURA 3D | Architectural Visualization & Virtual Tours",
+    title: "Vortex 3D Tours — Visites Virtuelles 3D & Expériences Immersives",
     description:
-      "Immersive 3D Virtual Tours & Architectural Visualization for Luxury Real Estate & World-Class Developers.",
+      "Visites virtuelles 3D immersives et visualisation architecturale d'exception pour promoteurs, architectes et immobilier de luxe.",
     type: "website",
+    locale: "fr_FR",
   },
 };
 
@@ -39,14 +44,25 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
-      className={cn("dark", "scroll-smooth", "antialiased", "selection:bg-terracotta", "selection:text-white", fontSerif.variable, "font-sans", inter.variable)}
+      lang="fr"
+      suppressHydrationWarning
+      className={cn(
+        "dark",
+        "scroll-smooth",
+        "antialiased",
+        "selection:bg-terracotta",
+        "selection:text-white",
+        fontSerif.variable,
+        inter.variable
+      )}
     >
-      <body className="bg-dark-bg text-[#F5F3F0] font-sans min-h-screen flex flex-col overflow-x-hidden">
+      <body
+        suppressHydrationWarning
+        className="bg-dark-bg text-[#F5F3F0] font-sans min-h-screen flex flex-col overflow-x-hidden"
+      >
         {children}
         <BackToTop />
       </body>
     </html>
   );
 }
-

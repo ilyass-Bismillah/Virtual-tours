@@ -9,21 +9,26 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-screen w-full flex items-center overflow-hidden bg-dark-bg"
     >
-      {/* Background Architectural Panorama */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/bghero.avif"
-          alt="Luxury Architecture Background"
-          fill
-          priority
-          className="object-cover object-center"
-        />
+      {/* Background Architectural Video */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          poster="/bghero.avif"
+          className="w-full h-full object-cover object-center"
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
+
         {/* Dark Vignette Overlay for Crisp Readability */}
-        <div className="absolute inset-0 bg-linear-to-r from-[#0E0D0D]/10 via-[#0E0D0D]/50 to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-t from-[#0E0D0D] via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#0E0D0D]/40 via-[#0E0D0D]/70 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#0E0D0D] via-transparent to-black/50" />
       </div>
 
-      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-lg max-w-sm mx-auto px-6 sm:px-8 lg:px-12 w-full pt-32 pb-20 relative z-10">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl max-w-sm mx-auto px-6 sm:px-8 lg:px-12 w-full pt-32 pb-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Side: Typography & CTAs */}
           <motion.div
@@ -39,7 +44,7 @@ export default function HeroSection() {
                 l&apos;hôtellerie et le commerce
               </span>
             </div>
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6">
+            <h1 className="font-serif text-5xl sm:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
               Faites entrer votre espace dans le futur de la vente.
             </h1>
 
@@ -50,7 +55,7 @@ export default function HeroSection() {
               avant même de réserver une visite.
             </p>
 
-            <ul className="flex flex-col gap-4 list-disc text-sm ml-5">
+            <ul className="flex flex-col gap-4 list-disc text-base ml-5">
               <li>
                 3,2x plus de temps passé en moyenne sur les annonces avec une
                 visite 3D
@@ -102,7 +107,7 @@ export default function HeroSection() {
 
           {/* Right Side: Overlapping Luxury Visual Cards */}
           <div className="lg:col-span-6 relative flex justify-end">
-            <div className="relative flex items-center justify-end w-full max-w-xl pt-10 lg:pt-0">
+            <div className="relative flex items-center justify-end w-full pt-10 lg:pt-0">
               {/* Card 1 */}
               <motion.div
                 initial={{ opacity: 0, y: 40 }}

@@ -12,6 +12,9 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import ContactEstimationForm from "@/components/ContactEstimationForm";
 import CTABannerFooter from "@/components/CTABannerFooter";
+import FeaturesGrid from "@/components/FeaturesGrid";
+import DemoPreviewSection from "@/components/DemoPreviewSection";
+import UseCasesSection from "@/components/UseCasesSection";
 
 export default function Home() {
   const [showreelOpen, setShowreelOpen] = useState(false);
@@ -31,6 +34,8 @@ export default function Home() {
       {/* 1. Hero Section */}
       <HeroSection />
 
+      <FeaturesGrid />
+
       {/* 2. What We Offer (Services Grid) */}
       <ServicesGrid />
 
@@ -39,6 +44,10 @@ export default function Home() {
 
       {/* 4. Filterable Portfolio & Project Cases */}
       <PortfolioSection />
+
+      <DemoPreviewSection />
+
+      <UseCasesSection />
 
       {/* 5. Featured Interactive 360° Panorama Player */}
       <Interactive360Showcase />

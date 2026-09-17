@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Compass,
   Box,
-  Scan,
+  Camera,
   Maximize2,
   Glasses,
   Store,
@@ -69,20 +69,22 @@ export default function ServicesGrid() {
       image: "/image8.avif",
     },
     {
-      id: "scans",
-      icon: Scan,
-      title: "Scans Matterport & Drones",
-      tagline: "Jumeaux Numériques Spatiaux LiDAR",
+      id: "photo-video",
+      icon: Camera,
+      title: "Photographie et vidéographie",
+      tagline: "Prises de Vue Haute Définition",
       description:
-        "Numérisation laser millimétrique de structures réelles complétée par photogrammétrie aérienne par drone pour les projets immobiliers d'envergure.",
+        "Des photographies et vidéos professionnelles, avec un éclairage, une retouche et un cadrage soignés pour les annonces résidentielles, les demeures de luxe, les appartements, les bâtiments commerciaux, les bureaux et les espaces de vente. Chaque image et séquence vidéo est optimisée pour les annonces MLS, les sites web, les brochures et les campagnes marketing, garantissant une première impression forte et percutante pour votre bien.",
       features: [
-        "Numérisation LiDAR de haute précision Matterport Pro3",
-        "Photogrammétrie aérienne 4K haute altitude",
-        "Export complet de nuages de points et maillages OBJ",
-        "Vues écorché (Dollhouse) et plans schématiques d'étages",
+        "Annonces résidentielles et demeures de luxe",
+        "Appartements et immeubles résidentiels",
+        "Bâtiments commerciaux et espaces de bureaux",
+        "Commerces et vitrines",
+        "Livrables optimisés pour le web et compatibles MLS",
+        "Fichiers haute définition pour impression et brochures",
       ],
       deliverables:
-        "Espace interactif Matterport Pro, données nuages de points BIM/CAD et orthophotographies aériennes",
+        "Galerie photo HD/4K retouchée, teasers vidéo verticaux (Reels) et film cinématique complet",
       image: "/image7.avif",
     },
     {
@@ -146,7 +148,7 @@ export default function ServicesGrid() {
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-terracotta/10 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl max-w-sm mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-1 rounded-full border border-terracotta/20">

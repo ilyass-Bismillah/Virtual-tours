@@ -99,7 +99,7 @@ export default function GallerySection() {
 
   return (
     <section id="portfolio" className="pb-24 pt-30 bg-dark-bg relative overflow-hidden">
-      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-lg max-w-sm mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-1 rounded-full border border-terracotta/20">
             Nos Réalisations
@@ -114,7 +114,7 @@ export default function GallerySection() {
 
         {/* Centered Minimal Filter Tabs */}
         <div className="flex items-center justify-center mb-14">
-          <div className="inline-flex items-center gap-1 sm:gap-2 p-1 rounded-xl bg-[#181615]/80 border border-white/5 backdrop-blur-md">
+          <div className="md:inline-flex grid grid-cols-3 items-center px-3 gap-3 p-1 rounded-xl bg-[#181615]/80 border border-white/5 backdrop-blur-md">
             {categories.map((tab) => {
               const isActive = activeTab === tab;
               return (
@@ -122,7 +122,7 @@ export default function GallerySection() {
                   type="button"
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-4 sm:px-5 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 cursor-pointer ${
+                  className={`px-4 md:px-5 py-3 rounded-lg text-xs font-medium transition-all duration-200 cursor-pointer ${
                     isActive
                       ? "bg-white/10 text-white shadow-sm"
                       : "text-[#8E8B87] hover:text-white"

@@ -90,7 +90,7 @@ export default function ContactEstimationForm() {
       {/* Ambient background glow */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-terracotta/15 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-lg max-w-sm mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center justify-center mb-20 space-y-5">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracotta/10 border border-terracotta/20 text-terracotta text-xs font-semibold uppercase tracking-wider mb-6">
             Contactez-nous
@@ -127,10 +127,10 @@ export default function ContactEstimationForm() {
                       Écrivez-nous
                     </h4>
                     <a
-                      href="mailto:contact@aura3d-studios.com"
+                      href="mailto:contact@digest-media.ma"
                       className="text-base font-semibold text-white hover:text-terracotta transition-colors"
                     >
-                      contact@aura3d-studios.com
+                      contact@digest-media.ma
                     </a>
                   </div>
                 </div>
@@ -144,7 +144,7 @@ export default function ContactEstimationForm() {
                       Appelez-nous
                     </h4>
                     <p className="text-base font-semibold text-white">
-                      +212 5 28 00 00 00 / +33 1 00 00 00 00
+                      +212 5 25 13 47 71
                     </p>
                   </div>
                 </div>
@@ -158,7 +158,7 @@ export default function ContactEstimationForm() {
                       Nos Studios
                     </h4>
                     <p className="text-sm font-light text-white/90">
-                      Casablanca • Paris • Marrakech • Dubaï
+                      Agadir - Maroc
                     </p>
                   </div>
                 </div>

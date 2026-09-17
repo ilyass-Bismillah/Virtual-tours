@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MoveRight, Menu, X, Compass, PhoneCall } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface NavbarProps {
   onBookDemoClick?: () => void;
@@ -49,12 +50,12 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
             href="#hero"
             className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-terracotta to-[#99341B] flex items-center justify-center text-white shadow-lg shadow-terracotta/20 group-hover:shadow-terracotta/40 transition-all duration-300">
+            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-terracotta to-[#818cf8] flex items-center justify-center text-white shadow-lg shadow-terracotta/20 group-hover:shadow-terracotta/40 transition-all duration-300">
               <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" />
             </div>
             <div className="">
               <span className="font-serif text-2xl font-bold tracking-wider text-white flex items-center gap-1">
-                AURA<span className="text-terracotta">3D</span>
+                Parallax
               </span>
             </div>
           </a>
@@ -74,21 +75,23 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
           </nav>
 
           {/* Desktop CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href="#contact"
-              onClick={(e) => {
-                if (onBookDemoClick) {
-                  e.preventDefault();
-                  onBookDemoClick();
-                }
-              }}
-              className="relative group inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-terracotta hover:bg-terracotta-hover text-white text-sm font-medium transition-all duration-300 shadow-lg shadow-terracotta/25 hover:shadow-terracotta/40 hover:-translate-y-0.5 active:translate-y-0"
+          <a
+            href="#contact"
+            onClick={(e) => {
+              if (onBookDemoClick) {
+                e.preventDefault();
+                onBookDemoClick();
+              }
+            }}
+          >
+            <Button
+              variant={"linear"}
+              className="hidden md:flex items-center gap-4 py-6 px-5"
             >
-              <span>Book a Demo</span>
+              <span>Demander un devis</span>
               <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
+            </Button>
+          </a>
 
           {/* Mobile Menu Trigger */}
           <button

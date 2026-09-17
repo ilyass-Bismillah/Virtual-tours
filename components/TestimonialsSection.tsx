@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Quote, ShieldCheck } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 import Image from "next/image";
 
 export default function TestimonialsSection() {
@@ -89,12 +89,11 @@ export default function TestimonialsSection() {
                   alt={item.author}
                   width={70}
                   height={50}
-                  className="w-12 h-12 rounded-full object-cover border border-terracotta"
+                  className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
                   <h4 className="font-serif text-base font-bold text-white flex items-center gap-1.5">
                     {item.author}
-                    <ShieldCheck className="w-3.5 h-3.5 text-terracotta" />
                   </h4>
                   <p className="text-xs text-[#A19E9B] font-light">
                     {item.title}

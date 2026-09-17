@@ -3,15 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-interface HeroSectionProps {
-  onStartProject?: () => void;
-  onViewPortfolio?: () => void;
-}
-
-export default function HeroSection({
-  onStartProject,
-  onViewPortfolio,
-}: HeroSectionProps) {
+export default function HeroSection() {
   return (
     <section
       id="hero"
@@ -40,33 +32,71 @@ export default function HeroSection({
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 flex flex-col items-start"
           >
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-6">
-              Design Spaces <br />
-              That <span className="text-terracotta italic">Inspire</span>
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0d1f1f]/60 border border-[#1b3a38] text-[#9cb1ad] text-xs sm:text-sm font-normal backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-terracotta animate-pulse" />
+              <span>
+                Visites virtuelles 3D immersives pour l&apos;immobilier,
+                l&apos;hôtellerie et le commerce
+              </span>
+            </div>
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6">
+              Faites entrer votre espace dans le futur de la vente.
             </h1>
 
-            <p className="text-[#B5B2AF] text-base sm:text-lg font-light leading-relaxed mb-8 max-w-lg">
-              We transform ordinary rooms into extraordinary experiences. Our
-              award-winning team crafts bespoke interiors that reflect your
-              unique personality and elevate your lifestyle.
+            <p className="text-base sm:text-lg font-light leading-relaxed mb-8 max-w-lg">
+              Digest Media transforme n&apos;importe quel bien, hôtel ou
+              commerce en un monde 3D entièrement explorable — en ligne en 48
+              heures, actif pour vous jour et nuit. Vos visiteurs explorent
+              avant même de réserver une visite.
             </p>
 
-            <div className="flex items-center gap-4 flex-wrap">
-              <a
-                href="#contact"
-                onClick={onStartProject}
-                className="px-7 py-3.5 rounded-full bg-terracotta hover:bg-[#d04e2b] text-white font-medium text-sm transition-all duration-300 shadow-lg shadow-terracotta/30 hover:shadow-terracotta/50 hover:-translate-y-0.5"
-              >
-                Start Your Project
-              </a>
+            <ul className="flex flex-col gap-4 list-disc text-sm ml-5">
+              <li>
+                3,2x plus de temps passé en moyenne sur les annonces avec une
+                visite 3D
+              </li>
+              <li>
+                Vos prospects se qualifient eux-mêmes avant même de programmer
+                une visite
+              </li>
+              <li>
+                Une seule visite, visible partout — votre annonce ne dort jamais
+              </li>
+            </ul>
 
-              <a
-                href="#portfolio"
-                onClick={onViewPortfolio}
-                className="px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/15 text-white/90 hover:text-white font-medium text-sm border border-white/15 transition-all duration-300 backdrop-blur-sm hover:-translate-y-0.5"
-              >
-                Our Work
-              </a>
+            <div className="flex items-center gap-8 sm:gap-12 pt-10">
+              <div className="flex flex-col">
+                <span className="font-sans text-3xl sm:text-4xl font-normal text-white tracking-tight leading-none">
+                  500+
+                </span>
+                <span className="text-xs sm:text-sm text-[#737373] mt-2 font-normal">
+                  visites livrées
+                </span>
+              </div>
+
+              {/* Divider */}
+              <div className="h-10 w-px bg-white/10" />
+
+              <div className="flex flex-col">
+                <span className="font-sans text-3xl sm:text-4xl font-normal text-white tracking-tight leading-none">
+                  48h
+                </span>
+                <span className="text-xs sm:text-sm text-[#737373] mt-2 font-normal">
+                  délai moyen
+                </span>
+              </div>
+
+              {/* Divider */}
+              <div className="h-10 w-px bg-white/10" />
+
+              <div className="flex flex-col">
+                <span className="font-sans text-3xl sm:text-4xl font-normal text-white tracking-tight leading-none">
+                  24/7
+                </span>
+                <span className="text-xs sm:text-sm text-[#737373] mt-2 font-normal">
+                  showroom en direct
+                </span>
+              </div>
             </div>
           </motion.div>
 

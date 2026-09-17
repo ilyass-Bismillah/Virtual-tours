@@ -11,8 +11,8 @@ import {
   CheckCircle,
   Loader2,
 } from "lucide-react";
-import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -23,30 +23,18 @@ import {
 } from "@/components/ui/select";
 
 const projectTypes = [
-  { label: "Residential Design", value: "Residential Design" },
-  { label: "Commercial Space", value: "Commercial Space" },
-  { label: "Renovation", value: "Renovation" },
-  { label: "Consultation Only", value: "Consultation Only" },
-  { label: "Other", value: "Other" },
-];
-
-const budgetRanges = [
-  { label: "$5,000 - $10,000", value: "$5,000 - $10,000" },
-  { label: "$10,000 - $25,000", value: "$10,000 - $25,000" },
-  { label: "$25,000 - $50,000", value: "$25,000 - $50,000" },
-  { label: "$50,000 - $100,000", value: "$50,000 - $100,000" },
-  { label: "$100,000+", value: "$100,000+" },
+  { label: "Immobilier", value: "Immobilier" },
+  { label: "Hôtellerie", value: "Hotellerie" },
+  { label: "Commerce", value: "Commerce" },
+  { label: "Autre", value: "Autre" },
 ];
 
 export default function ContactEstimationForm() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    nomComplet: "",
     email: "",
-    phone: "",
-    projectType: "",
-    budgetRange: "",
-    message: "",
+    telephone: "",
+    typeDactivité: "",
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -71,25 +59,22 @@ export default function ContactEstimationForm() {
 
       if (!res.ok) {
         throw new Error(
-          data.error || "Something went wrong. Please try again.",
+          data.error || "Une erreur est survenue. Veuillez réessayer."
         );
       }
 
       setSubmitted(true);
       setFormData({
-        firstName: "",
-        lastName: "",
+        nomComplet: "",
         email: "",
-        phone: "",
-        projectType: "",
-        budgetRange: "",
-        message: "",
+        telephone: "",
+        typeDactivité: "",
       });
     } catch (err) {
       if (err instanceof Error) {
         setErrorMessage(err.message);
       } else {
-        setErrorMessage("Failed to send message. Please try again.");
+        setErrorMessage("Échec de l'envoi du message. Veuillez réessayer.");
       }
     } finally {
       setIsLoading(false);
@@ -107,13 +92,13 @@ export default function ContactEstimationForm() {
       <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-lg max-w-sm mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center justify-center mb-20 space-y-5">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracotta/10 border border-terracotta/20 text-terracotta text-xs font-semibold uppercase tracking-wider mb-6">
-            Contact Us
+            Contactez-nous
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight text-center">
-            Let&apos;s Start Your Project
+            Commençons Votre Projet
           </h2>
           <p className="text-[#A19E9B] font-light text-lg leading-relaxed text-center">
-            Get in touch with our team and let&apos;s bring your vision to life
+            Prenez contact avec notre équipe pour donner vie à votre vision
           </p>
         </div>
 
@@ -122,12 +107,12 @@ export default function ContactEstimationForm() {
           <div className="lg:col-span-5 flex flex-col justify-between h-full">
             <div>
               <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mb-6 leading-tight">
-                Get in Touch
+                Entrons en Contact
               </h2>
               <p className="text-[#A19E9B] font-light text-lg leading-relaxed mb-8">
-                Ready to transform your space? Fill out the form and our design
-                team will reach out within 24 hours to schedule your free
-                consultation.
+                Prêt à valoriser vos espaces ? Remplissez ce formulaire et notre
+                équipe d&apos;experts vous contactera sous 24 heures pour planifier
+                votre démonstration personnalisée.
               </p>
 
               {/* Contact Details List */}
@@ -138,7 +123,7 @@ export default function ContactEstimationForm() {
                   </div>
                   <div>
                     <h4 className="text-xs text-[#A19E9B] uppercase tracking-wider">
-                      Email Us
+                      Écrivez-nous
                     </h4>
                     <a
                       href="mailto:contact@aura3d-studios.com"
@@ -155,10 +140,10 @@ export default function ContactEstimationForm() {
                   </div>
                   <div>
                     <h4 className="text-xs text-[#A19E9B] uppercase tracking-wider">
-                      Call Us
+                      Appelez-nous
                     </h4>
                     <p className="text-base font-semibold text-white">
-                      +1 (800) 492-AURA / +44 20 7946 0912
+                      +212 5 28 00 00 00 / +33 1 00 00 00 00
                     </p>
                   </div>
                 </div>
@@ -169,11 +154,10 @@ export default function ContactEstimationForm() {
                   </div>
                   <div>
                     <h4 className="text-xs text-[#A19E9B] uppercase tracking-wider">
-                      Visit Our Studio
+                      Nos Studios
                     </h4>
                     <p className="text-sm font-light text-white/90">
-                      Beverly Hills • Mayfair, London • Dubai Marina • Tokyo
-                      Minato
+                      Casablanca • Paris • Marrakech • Dubaï
                     </p>
                   </div>
                 </div>
@@ -184,12 +168,12 @@ export default function ContactEstimationForm() {
                 <div className="flex items-center gap-3 mb-2">
                   <Clock className="w-5 h-5 text-terracotta" />
                   <h4 className="text-sm font-semibold text-white">
-                    Rapid Proposal Turnaround
+                    Délai de Réponse Garanti
                   </h4>
                 </div>
                 <p className="text-xs text-[#A19E9B] font-light">
-                  We review incoming spatial specs within 4 business hours and
-                  deliver fixed-fee formal proposals within 24 hours.
+                  Nous analysons vos spécifications spatiales sous 4 heures ouvrées
+                  et vous fournissons une proposition tarifaire détaillée en 24 heures.
                 </p>
               </div>
             </div>
@@ -211,18 +195,18 @@ export default function ContactEstimationForm() {
                       <CheckCircle className="w-10 h-10" />
                     </div>
                     <h4 className="font-serif text-3xl font-bold text-white mb-2">
-                      Project Estimate Received!
+                      Demande Reçue avec Succès !
                     </h4>
                     <p className="text-sm text-[#A19E9B] max-w-md mx-auto mb-8 font-light">
-                      Thank you! A Senior Studio Partner has been notified and
-                      will email your tailored proposal shortly.
+                      Merci pour votre confiance. Notre équipe étudie votre projet et
+                      vous transmettra une proposition sur-mesure dans les plus brefs délais.
                     </p>
                     <button
                       type="button"
                       onClick={() => setSubmitted(false)}
                       className="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-colors"
                     >
-                      Calculate Another Project
+                      Envoyer une autre demande
                     </button>
                   </motion.div>
                 ) : (
@@ -233,40 +217,31 @@ export default function ContactEstimationForm() {
                       </div>
                     )}
 
-                    {/* First & Last Name */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
-                          First Name *
-                        </label>
-                        <Input
-                          type="text"
-                          required
-                          placeholder="John"
-                          value={formData.firstName}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              firstName: e.target.value,
-                            })
-                          }
-                          className="w-full px-4 py-3 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm focus:outline-none focus:border-terracotta transition-colors placeholder:text-white/30"
-                        />
-                      </div>
+                    <div className="space-y-2">
+                      <h2 className="text-2xl font-bold text-white">
+                        Obtenez votre Visite 3D personnalisée
+                      </h2>
+                      <p className="text-sm text-gray-300 font-light">
+                        Sans engagement. Découvrez votre propre espace en 3D
+                        sous 48 heures.
+                      </p>
+                    </div>
 
+                    {/* Nom complet */}
+                    <div className="grid grid-cols-1">
                       <div>
                         <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
-                          Last Name *
+                          Nom complet *
                         </label>
                         <Input
                           type="text"
                           required
-                          placeholder="Doe"
-                          value={formData.lastName}
+                          placeholder="Jeanne Dupont"
+                          value={formData.nomComplet}
                           onChange={(e) =>
                             setFormData({
                               ...formData,
-                              lastName: e.target.value,
+                              nomComplet: e.target.value,
                             })
                           }
                           className="w-full px-4 py-3 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm focus:outline-none focus:border-terracotta transition-colors placeholder:text-white/30"
@@ -274,16 +249,16 @@ export default function ContactEstimationForm() {
                       </div>
                     </div>
 
-                    {/* Email & Phone */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {/* Email */}
+                    <div className="grid grid-cols-1">
                       <div>
                         <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
-                          EMAIL *
+                          Email professionnel *
                         </label>
                         <Input
                           type="email"
                           required
-                          placeholder="john@example.com"
+                          placeholder="jeanne@entreprise.com"
                           value={formData.email}
                           onChange={(e) =>
                             setFormData({ ...formData, email: e.target.value })
@@ -291,110 +266,71 @@ export default function ContactEstimationForm() {
                           className="w-full px-4 py-3 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm focus:outline-none focus:border-terracotta transition-colors placeholder:text-white/30"
                         />
                       </div>
+                    </div>
 
+                    {/* Téléphone & Type d'activité */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
-                          Phone Number
+                          Téléphone *
                         </label>
                         <Input
                           type="tel"
-                          placeholder="+1 (555) 000-0000"
-                          value={formData.phone}
+                          required
+                          placeholder="+212 6 00 00 00 00"
+                          value={formData.telephone}
                           onChange={(e) =>
-                            setFormData({ ...formData, phone: e.target.value })
+                            setFormData({ ...formData, telephone: e.target.value })
                           }
                           className="w-full px-4 py-3 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm focus:outline-none focus:border-terracotta transition-colors placeholder:text-white/30"
                         />
                       </div>
-                    </div>
 
-                    {/* Project Type */}
-                    <div>
-                      <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
-                        Project Type
-                      </label>
-                      <Select
-                        value={formData.projectType}
-                        onValueChange={(val) =>
-                          setFormData({ ...formData, projectType: val })
-                        }
-                      >
-                        <SelectTrigger className="w-full px-4 py-5 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm">
-                          <SelectValue placeholder="Select a project type" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-[#1C1A19] border-white/10 text-white">
-                          <SelectGroup>
-                            {projectTypes.map((item) => (
-                              <SelectItem key={item.value} value={item.value}>
-                                {item.label}
-                              </SelectItem>
-                            ))}
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    {/* Budget Range */}
-                    <div>
-                      <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
-                        Budget Range
-                      </label>
-                      <Select
-                        value={formData.budgetRange}
-                        onValueChange={(val) =>
-                          setFormData({ ...formData, budgetRange: val })
-                        }
-                      >
-                        <SelectTrigger className="w-full px-4 py-5 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm">
-                          <SelectValue placeholder="Select your budget" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-[#1C1A19] border-white/10 text-white">
-                          <SelectGroup>
-                            {budgetRanges.map((item) => (
-                              <SelectItem key={item.value} value={item.value}>
-                                {item.label}
-                              </SelectItem>
-                            ))}
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    {/* Message */}
-                    <div>
-                      <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
-                        Tell us about your project *
-                      </label>
-                      <Textarea
-                        rows={3}
-                        required
-                        placeholder="Tell us about your property location, architectural drawings, or target launch deadline..."
-                        value={formData.message}
-                        onChange={(e) =>
-                          setFormData({ ...formData, message: e.target.value })
-                        }
-                        className="w-full px-4 py-3 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm focus:outline-none focus:border-terracotta transition-colors placeholder:text-white/30"
-                      />
+                      <div>
+                        <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
+                          Type d&apos;activité *
+                        </label>
+                        <Select
+                          value={formData.typeDactivité}
+                          onValueChange={(val) =>
+                            setFormData({ ...formData, typeDactivité: val })
+                          }
+                        >
+                          <SelectTrigger className="w-full px-4 py-5 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm">
+                            <SelectValue placeholder="Sélectionnez" />
+                          </SelectTrigger>
+                          <SelectContent className="bg-[#1C1A19] border-white/10 text-white">
+                            <SelectGroup>
+                              {projectTypes.map((item) => (
+                                <SelectItem key={item.value} value={item.value}>
+                                  {item.label}
+                                </SelectItem>
+                              ))}
+                            </SelectGroup>
+                          </SelectContent>
+                        </Select>
+                      </div>
                     </div>
 
                     {/* Submit Button */}
-                    <button
+                    <Button
                       type="submit"
+                      variant={"linear"}
                       disabled={isLoading}
-                      className="w-full py-4 rounded-2xl bg-terracotta hover:bg-[#c94d2c] disabled:opacity-50 disabled:cursor-not-allowed text-white text-base font-semibold transition-all duration-300 shadow-xl shadow-terracotta/30 hover:shadow-terracotta/50 flex items-center justify-center gap-2 group cursor-pointer"
+                      className="w-full py-7 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed text-white text-base font-semibold transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
                     >
                       {isLoading ? (
                         <>
                           <Loader2 className="w-5 h-5 animate-spin" />
-                          <span>Sending...</span>
+                          <span>Envoi en cours...</span>
                         </>
                       ) : (
                         <>
-                          <span>Submit Project</span>
+                          <span>Débloquez votre démo 3D</span>
                           <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </>
                       )}
-                    </button>
+                    </Button>
                   </form>
                 )}
               </AnimatePresence>

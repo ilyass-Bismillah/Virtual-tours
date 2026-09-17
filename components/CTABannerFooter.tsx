@@ -1,6 +1,7 @@
 import { Compass, MoveRight } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Button } from "./ui/button";
 
 const navigationLinks = [
   { label: "Home", href: "#hero" },
@@ -31,7 +32,7 @@ export default function CTABannerFooter() {
   return (
     <footer className="bg-dark-bg relative overflow-hidden text-white border-t border-white/10">
       {/* 1. High-Contrast Warm Accent CTA Banner */}
-      <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-[#D9532F] via-terracotta to-[#99341B] overflow-hidden">
+      <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-terracotta-hover via-terracotta to-[#818cf8] overflow-hidden">
         {/* Subtle Ambient Radial Light */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18)_0,transparent_70%)] pointer-events-none" />
 
@@ -48,13 +49,13 @@ export default function CTABannerFooter() {
               elevating off-plan presales with photorealistic 3D walkthroughs.
             </p>
           </div>
-
           <a
             href="#contact"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white text-dark-bg font-bold text-base hover:bg-neutral-100 transition-all duration-300 shadow-2xl hover:scale-105 shrink-0"
           >
+          <Button variant={"default"} className="flex items-center gap-5 px-5 rounded-2xl">
             <span>Book a Consultation</span>
             <MoveRight className="w-5 h-5 text-terracotta" />
+          </Button>
           </a>
         </div>
       </div>

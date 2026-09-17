@@ -17,16 +17,38 @@
   animation: float2 7s ease-in-out infinite;
 }
 
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 100%;
+  }
+}
+
+.animate-gradient-right {
+  background: linear-gradient(
+    90deg,
+    #22d3ee 0%,
+    #60a5fa 25%,
+    #818cf8 50%,
+    #60a5fa 75%,
+    #22d3ee 100%
+  );
+  background-size: 200% 100%;
+  animation: moveGradient 4s linear infinite;
+}
+
 @layer base {
   :root {
     --bg-dark: #0F0E0E;
     --bg-surface: #1A1918;
     --bg-elevated: #242220;
-    --accent-terracotta: #E05A36;
-    --accent-terracotta-hover: #F06B47;
-    --accent-glow: rgba(224, 90, 54, 0.25);
+    --accent-terracotta: #22d3ee;
+    --accent-terracotta-hover: #60a5fa;
+    --accent-glow: rgba(34, 211, 238, 0.25);
     --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-accent: rgba(224, 90, 54, 0.2);
+    --border-accent: rgba(34, 211, 238, 0.2);
     --text-primary: #F5F3F0;
     --text-muted: #A19E9B;
   }
@@ -42,8 +64,8 @@
 }
 
 @theme {
-  --color-terracotta: #E05A36;
-  --color-terracotta-hover: #F06B47;
+  --color-terracotta: #22d3ee;
+  --color-terracotta-hover: #60a5fa;
   --color-dark-bg: #0F0E0E;
   --color-dark-surface: #1A1918;
   --color-dark-elevated: #242220;
@@ -63,7 +85,7 @@
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #E05A36;
+  background: #22d3ee;
 }
 
 /* Luxury Glassmorphism & Glow Effects */
@@ -80,21 +102,24 @@
 
 .glass-card-hover:hover {
   background: rgba(30, 29, 27, 0.85);
-  border-color: rgba(224, 90, 54, 0.35);
-  box-shadow: 0 12px 40px -10px rgba(224, 90, 54, 0.15), 0 0 20px -5px rgba(224, 90, 54, 0.2);
+  border-color: rgba(34, 211, 238, 0.35);
+  box-shadow: 0 12px 40px -10px rgba(34, 211, 238, 0.15), 0 0 20px -5px rgba(34, 211, 238, 0.2);
   transform: translateY(-4px);
 }
 
+/* Glow Cyan / Blue Effects */
+.glow-cyan,
 .glow-orange {
-  box-shadow: 0 0 40px rgba(224, 90, 54, 0.25);
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.25);
 }
 
+.glow-cyan-lg,
 .glow-orange-lg {
-  box-shadow: 0 0 80px rgba(224, 90, 54, 0.35);
+  box-shadow: 0 0 80px rgba(34, 211, 238, 0.35);
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #FFF5EA 0%, #F5E6D3 40%, #E05A36 100%);
+  background: linear-gradient(135deg, #FFF5EA 0%, #F5E6D3 40%, #22d3ee 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -17,8 +17,8 @@ import Image from "next/image";
 
 interface Hotspot {
   id: string;
-  x: number; // percentage
-  y: number; // percentage
+  x: number; // pourcentage
+  y: number; // pourcentage
   title: string;
   description: string;
   specs: string;
@@ -36,78 +36,78 @@ const rooms: Room[] = [
   {
     id: "penthouse-salon",
     name: "Grand Salon Penthouse",
-    subtitle: "8K Panoramic Spatial Scan",
+    subtitle: "Numérisation Spatiale Panoramique 8K",
     image: "/image5.avif",
     hotspots: [
       {
         id: "marble",
         x: 35,
         y: 65,
-        title: "Calacatta Gold Marble Island",
+        title: "Îlot en Marbre Calacatta Gold",
         description:
-          "Book-matched Italian marble counter with concealed induction heating elements.",
-        specs: "Honed Finish • 3-inch Bullnose Edge",
+          "Comptoir en marbre italien taillé en livre ouvert avec plaques à induction intégrées.",
+        specs: "Finition Adoucie • Bord Biseauté 3 Pouces",
       },
       {
         id: "glazing",
         x: 75,
         y: 40,
-        title: "Motorized Acoustic Glazing",
+        title: "Vite Acoustique Motorisée",
         description:
-          "Floor-to-ceiling 14ft triple-pane acoustic glass with automated solar shading.",
-        specs: "UV Filter 99.8% • Sound Reduction 48dB",
+          "Triple vitrage acoustique du sol au plafond de 4,2 m avec stores solaires automatisés.",
+        specs: "Filtre UV 99,8% • Réduction Acoustique 48dB",
       },
       {
         id: "lighting",
         x: 50,
         y: 20,
-        title: "Bespoke Architectural Chandelier",
+        title: "Lustre Architectural Sur-Mesure",
         description:
-          "Hand-blown Venetian glass crystal fixture synchronized with circadium lighting preset.",
-        specs: "DALI 2 Dimming • 2700K Warm Kelvin",
+          "Luminaire en verre soufflé de Murano synchronisé sur le rythme circadien naturel.",
+        specs: "Gradation DALI 2 • Lumière Chaude 2700K",
       },
     ],
   },
   {
     id: "sky-terrace",
-    name: "Infinity Sky Lounge & Terrace",
-    subtitle: "Outdoor Environmental Scan",
+    name: "Lounge Céleste & Terrasse Panoramique",
+    subtitle: "Scan Environnemental Extérieur",
     image: "/image6.avif",
     hotspots: [
       {
         id: "pool",
         x: 60,
         y: 75,
-        title: "Cantilevered Glass Pool",
+        title: "Piscine Suspendue en Verre",
         description:
-          "Structural acrylic glass pool overhang looking down 45 stories over the city skyline.",
-        specs: "Heated Hydro-massage • Saltwater Filtration",
+          "Bassin en acrylique structurel suspendu au-dessus du vide, à 45 étages de hauteur.",
+        specs: "Hydromassage Chauffé • Traitement au Sel",
       },
       {
         id: "firepit",
         x: 25,
         y: 70,
-        title: "Linear Ethanol Fireplace",
+        title: "Foyer Linéaire au Bioéthanol",
         description:
-          "Automated remote-controlled linear ethanol burner set in black basalt stone.",
-        specs: "Smart Home Integration • Zero Emission",
+          "Brûleur linéaire automatique piloté à distance incrusté dans un bloc de basalte noir.",
+        specs: "Domotique Intégrée • Zéro Émission Directe",
       },
     ],
   },
   {
     id: "master-suite",
-    name: "Master Sanctuary Suite",
-    subtitle: "LiDAR Spatial Walkthrough",
+    name: "Suite Sanctuaire Master",
+    subtitle: "Visite Interactive LiDAR",
     image: "/image7.avif",
     hotspots: [
       {
         id: "bed",
         x: 45,
         y: 55,
-        title: "Custom Floating Walnut Platform",
+        title: "Plateforme Flottante en Noyer",
         description:
-          "Hand-crafted American Walnut bed frame with integrated wireless charging and ambient perimeter LEDs.",
-        specs: "FSC Certified Hardwood • Integrated Controls",
+          "Cadre de lit artisanal en noyer américain avec chargeurs sans fil et LED d'ambiance intégrés.",
+        specs: "Bois Certifié FSC • Commandes Tactiles",
       },
     ],
   },
@@ -125,7 +125,7 @@ export default function Interactive360Showcase() {
   const activeRoom = rooms[activeRoomIndex];
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Sync state if user exits fullscreen via Escape key
+  // Synchronisation plein écran via Échap
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
@@ -136,7 +136,6 @@ export default function Interactive360Showcase() {
     };
   }, []);
 
-  // Global mouse/touch release listener to avoid getting stuck dragging
   const handleEndDrag = useCallback(() => {
     setIsDragging(false);
   }, []);
@@ -145,7 +144,6 @@ export default function Interactive360Showcase() {
     (clientX: number) => {
       if (!isDragging) return;
       const newPan = clientX - dragStartX;
-      // Boundaries scaled by zoom
       const limit = 350 * zoomLevel;
       if (newPan > -limit && newPan < limit) {
         setPanX(newPan);
@@ -207,26 +205,26 @@ export default function Interactive360Showcase() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-2 rounded-full border border-terracotta/20 inline-flex items-center gap-2">
-            Experience
+            Expérience Interactive
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mt-4 mb-4 leading-tight">
-            Virtual Tour
+            Visite Virtuelle 360° en Direct
           </h2>
           <p className="text-[#A19E9B] text-base font-light">
-            Step inside our completed projects and experience the transformation
+            Déplacez la vue panoramique et sélectionnez les points d&apos;intérêt pour découvrir les matériaux et finitions.
           </p>
         </div>
 
         {/* Feature Badges */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 text-xs font-medium text-white/80">
           <span className="px-4 py-1.5 rounded-full bg-[#181615] border border-white/10 flex items-center gap-2 shadow-sm">
-            <CheckCircle2 className="w-4 h-4 text-terracotta" /> 4K HDR Resolution
+            <CheckCircle2 className="w-4 h-4 text-terracotta" /> Résolution 4K HDR
           </span>
           <span className="px-4 py-1.5 rounded-full bg-[#181615] border border-white/10 flex items-center gap-2 shadow-sm">
-            <CheckCircle2 className="w-4 h-4 text-terracotta" /> Cross-Platform Compatible
+            <CheckCircle2 className="w-4 h-4 text-terracotta" /> Compatible Tout Écran
           </span>
           <span className="px-4 py-1.5 rounded-full bg-[#181615] border border-white/10 flex items-center gap-2 shadow-sm">
-            <CheckCircle2 className="w-4 h-4 text-terracotta" /> Real-time Hotspots
+            <CheckCircle2 className="w-4 h-4 text-terracotta" /> Balises Interactives
           </span>
         </div>
 
@@ -313,6 +311,7 @@ export default function Interactive360Showcase() {
               <div className="flex items-center gap-2 bg-[#181615]/80 backdrop-blur-md p-1.5 rounded-2xl border border-white/10 overflow-x-auto max-w-full shadow-lg">
                 {rooms.map((room, idx) => (
                   <button
+                    type="button"
                     key={room.id}
                     onClick={() => {
                       setActiveRoomIndex(idx);
@@ -332,33 +331,37 @@ export default function Interactive360Showcase() {
               {/* Viewport Action Tools */}
               <div className="flex items-center gap-1.5 bg-[#181615]/80 backdrop-blur-md p-1.5 rounded-2xl border border-white/10 shadow-lg">
                 <button
+                  type="button"
                   onClick={() => setZoomLevel((z) => Math.min(z + 0.25, 2))}
-                  title="Zoom In"
-                  aria-label="Zoom In"
+                  title="Zoom Avant"
+                  aria-label="Zoom Avant"
                   className="p-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
                 >
                   <ZoomIn className="w-4 h-4" />
                 </button>
                 <button
+                  type="button"
                   onClick={() => setZoomLevel((z) => Math.max(z - 0.25, 1))}
-                  title="Zoom Out"
-                  aria-label="Zoom Out"
+                  title="Zoom Arrière"
+                  aria-label="Zoom Arrière"
                   className="p-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
                 >
                   <ZoomOut className="w-4 h-4" />
                 </button>
                 <button
+                  type="button"
                   onClick={resetView}
-                  title="Reset View"
-                  aria-label="Reset View"
+                  title="Réinitialiser la vue"
+                  aria-label="Réinitialiser la vue"
                   className="p-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
                 >
                   <RotateCcw className="w-4 h-4" />
                 </button>
                 <button
+                  type="button"
                   onClick={toggleFullscreen}
-                  title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
-                  aria-label="Toggle Fullscreen"
+                  title={isFullscreen ? "Quitter le plein écran" : "Plein écran"}
+                  aria-label="Basculer en plein écran"
                   className="p-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
                 >
                   {isFullscreen ? (
@@ -382,11 +385,12 @@ export default function Interactive360Showcase() {
                 >
                   <div className="flex items-start justify-between mb-3 gap-4">
                     <span className="text-[10px] uppercase tracking-widest text-terracotta bg-terracotta/10 px-2.5 py-1 rounded-md font-semibold">
-                      MATERIAL SPECIFICATION
+                      SPÉCIFICATION MATÉRIAU
                     </span>
                     <button
+                      type="button"
                       onClick={() => setActiveHotspot(null)}
-                      aria-label="Close specification modal"
+                      aria-label="Fermer la spécification"
                       className="text-white/60 hover:text-white transition-colors cursor-pointer p-1"
                     >
                       <X className="w-4 h-4" />

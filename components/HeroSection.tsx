@@ -33,7 +33,7 @@ export default function HeroSection() {
             className="lg:col-span-6 flex flex-col items-start"
           >
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0d1f1f]/60 border border-[#1b3a38] text-[#9cb1ad] text-xs sm:text-sm font-normal backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-terracotta animate-pulse" />
+              <span className="w-3 md:w-2 h-2 rounded-full bg-terracotta animate-pulse" />
               <span>
                 Visites virtuelles 3D immersives pour l&apos;immobilier,
                 l&apos;hôtellerie et le commerce
@@ -69,7 +69,7 @@ export default function HeroSection() {
                 <span className="font-sans text-3xl sm:text-4xl font-normal text-white tracking-tight leading-none">
                   500+
                 </span>
-                <span className="text-xs sm:text-sm text-[#737373] mt-2 font-normal">
+                <span className="text-xs sm:text-sm text-gray-200 mt-2 font-normal">
                   visites livrées
                 </span>
               </div>
@@ -81,7 +81,7 @@ export default function HeroSection() {
                 <span className="font-sans text-3xl sm:text-4xl font-normal text-white tracking-tight leading-none">
                   48h
                 </span>
-                <span className="text-xs sm:text-sm text-[#737373] mt-2 font-normal">
+                <span className="text-xs sm:text-sm text-gray-200 mt-2 font-normal">
                   délai moyen
                 </span>
               </div>
@@ -93,7 +93,7 @@ export default function HeroSection() {
                 <span className="font-sans text-3xl sm:text-4xl font-normal text-white tracking-tight leading-none">
                   24/7
                 </span>
-                <span className="text-xs sm:text-sm text-[#737373] mt-2 font-normal">
+                <span className="text-xs sm:text-sm text-gray-200 mt-2 font-normal">
                   showroom en direct
                 </span>
               </div>
@@ -102,7 +102,7 @@ export default function HeroSection() {
 
           {/* Right Side: Overlapping Luxury Visual Cards */}
           <div className="lg:col-span-6 relative flex justify-end">
-            <div className="relative flex items-center justify-end w-full max-w-xl">
+            <div className="relative flex items-center justify-end w-full max-w-xl pt-10 lg:pt-0">
               {/* Card 1 */}
               <motion.div
                 initial={{ opacity: 0, y: 40 }}

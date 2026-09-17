@@ -13,22 +13,22 @@ const stats: StatItem[] = [
   {
     value: 15,
     suffix: "+",
-    label: "Years Experience",
+    label: "Années d'Expérience",
   },
   {
     value: 500,
     suffix: "+",
-    label: "Happy Clients",
+    label: "Clients Satisfaits",
   },
   {
     value: 25,
     suffix: "+",
-    label: "Design Awards",
+    label: "Prix & Distinctions",
   },
   {
     value: 98,
     suffix: "%",
-    label: "Satisfaction Rate",
+    label: "Taux de Satisfaction",
   },
 ];
 
@@ -41,13 +41,13 @@ function Counter({ target }: { target: number }) {
     if (!isInView) return;
 
     let startTime: number | null = null;
-    const duration = 2000; 
+    const duration = 2000;
 
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
 
-      // Easing function (easeOutExpo) 
+      // Easing function (easeOutExpo)
       const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       const currentVal = Math.floor(easeOut * target);
 
@@ -68,8 +68,8 @@ function Counter({ target }: { target: number }) {
 
 export default function MetricsBar() {
   return (
-    <section className="relative py-24 bg-linear-to-r from-dark-bg via-terracotta/5 tp-dark-bg overflow-hidden">
-      {/* Subtle Top & Bottom Hairlines */}
+    <section className="relative py-24 bg-linear-to-r from-dark-bg via-terracotta/5 to-dark-bg overflow-hidden">
+      {/* Lignes d'accent supérieures et inférieures */}
       <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
 
@@ -84,7 +84,7 @@ export default function MetricsBar() {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className="flex flex-col items-center justify-center text-center"
             >
-              {/* Metric Number + Colored Suffix */}
+              {/* Chiffre clé + Suffixe coloré */}
               <div className="flex items-baseline justify-center font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-white tracking-tight leading-none mb-3.5 select-none">
                 <Counter target={stat.value} />
                 <span className="text-terracotta ml-1 font-sans font-semibold text-3xl sm:text-4xl lg:text-5xl">
@@ -92,7 +92,7 @@ export default function MetricsBar() {
                 </span>
               </div>
 
-              {/* Label */}
+              {/* Libellé */}
               <p className="text-xs sm:text-sm text-[#A19E9B] font-light tracking-wide">
                 {stat.label}
               </p>

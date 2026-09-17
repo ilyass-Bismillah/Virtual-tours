@@ -61,7 +61,7 @@ export async function POST(req: Request) {
           </table>
 
           <div style="background: #f8fafc; border-left: 4px solid #22d3ee; padding: 12px 16px; border-radius: 6px; font-size: 13px; color: #475569;">
-            Rappel : Vous vous êtes engagé à répondre sous un délai de 24 à 48 heures.
+            Délai d'engagement : Réponse attendue sous 24 à 48h
           </div>
         </div>
       `,

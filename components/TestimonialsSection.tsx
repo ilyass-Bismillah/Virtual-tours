@@ -8,33 +8,30 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-        "AURA 3D completely transformed our off-plan presales process for The Grand Horizon Residences. Their 360° virtual tours allowed international buyers in London and Tokyo to tour penthouses seamlessly before construction was finished. We sold 85% of units off-plan.",
+        "AURA 3D a totalement transformé notre processus de commercialisation en VEFA pour les Résidences Grand Horizon. Leurs visites immersives 360° ont permis à des acquéreurs internationaux à Londres et Tokyo de visiter les penthouses avant la fin des travaux. Nous avons prévendu 85% des lots.",
       author: "Marcus Vance",
-      title: "Senior Vice President of Luxury Development",
+      title: "Vice-Président Développement Résidentiel de Luxe",
       company: "Sotheby's International Realty",
       rating: 5,
-      avatar:
-        "/avatar1.avif",
+      avatar: "/avatar1.avif",
     },
     {
       quote:
-        "The spatial fidelity and lighting accuracy in AURA 3D's CGI renders and Matterport digital twins are beyond peer. Their attention to detail on custom marble finishes and architectural glazing made our project presentations to city councils and investors effortless.",
+        "La précision spatiale et le réalisme des lumières dans les rendus 3D et jumeaux numériques Matterport sont tout simplement incomparables. Le souci du détail sur les finitions en marbre et les baies vitrées a rendu nos présentations aux investisseurs évidentes et percutantes.",
       author: "Elena Rostova",
-      title: "Principal Architect & Founding Partner",
+      title: "Architecte Principale & Associée Fondatrice",
       company: "Rostova Architecture Studio",
       rating: 5,
-      avatar:
-        "/avatar2.avif",
+      avatar: "/avatar2.avif",
     },
     {
       quote:
-        "Deploying Vision Pro VR experiences created by AURA 3D in our sales galleries resulted in our highest visitor engagement to date. Prospective buyers spend an average of 25 minutes exploring every room in virtual reality.",
+        "L'intégration des casques VR Apple Vision Pro conçus par AURA 3D dans nos espaces de vente a généré un engagement record. Nos prospects passent en moyenne 25 minutes à explorer chaque pièce en totale immersion avant de prendre leur décision.",
       author: "Tariq Al-Maktoum",
-      title: "Head of Marketing & Sales",
+      title: "Directeur Marketing & Ventes",
       company: "Emaar Luxury Holdings",
       rating: 5,
-      avatar:
-        "/avatar3.avif",
+      avatar: "/avatar3.avif",
     },
   ];
 
@@ -47,13 +44,13 @@ export default function TestimonialsSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-1 rounded-full border border-terracotta/20">
-            Testimonials
+            Témoignages
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mt-4 mb-4 leading-tight">
-            What Our Clients Say
+            Ce Que Disent Nos Partenaires
           </h2>
           <p className="text-[#A19E9B] text-base font-light">
-            Real stories from satisfied homeowners who trusted us with their spaces
+            Découvrez comment nous accompagnons promoteurs, architectes et agences d&apos;exception dans la valorisation de leurs projets
           </p>
         </div>
 
@@ -80,15 +77,15 @@ export default function TestimonialsSection() {
               </div>
 
               <p className="text-sm text-[#F5F3F0]/90 font-light leading-relaxed italic mb-8">
-                &quot;{item.quote}&quot;
+                &laquo; {item.quote} &raquo;
               </p>
 
               <div className="flex items-center gap-4 pt-6 border-t border-white/5">
                 <Image
                   src={item.avatar}
                   alt={item.author}
-                  width={70}
-                  height={50}
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
@@ -98,7 +95,7 @@ export default function TestimonialsSection() {
                   <p className="text-xs text-[#A19E9B] font-light">
                     {item.title}
                   </p>
-                  <p className="text-[11px] text-terracotta  mt-0.5">
+                  <p className="text-[11px] text-terracotta mt-0.5 font-medium">
                     {item.company}
                   </p>
                 </div>

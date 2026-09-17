@@ -8,8 +8,8 @@ import {
   Phone,
   MapPin,
   Clock,
-  CheckCircle,
   Loader2,
+  Check,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -192,7 +192,7 @@ export default function ContactEstimationForm() {
                     className="text-center py-12"
                   >
                     <div className="w-20 h-20 rounded-full bg-terracotta/20 border border-terracotta text-terracotta flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle className="w-10 h-10" />
+                      <Check className="w-10 h-10" />
                     </div>
                     <h4 className="font-serif text-3xl font-bold text-white mb-2">
                       Demande Reçue avec Succès !
@@ -201,13 +201,13 @@ export default function ContactEstimationForm() {
                       Merci pour votre confiance. Notre équipe étudie votre projet et
                       vous transmettra une proposition sur-mesure dans les plus brefs délais.
                     </p>
-                    <button
+                    <Button
                       type="button"
                       onClick={() => setSubmitted(false)}
-                      className="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-colors"
+                      className="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-colors"
                     >
                       Envoyer une autre demande
-                    </button>
+                    </Button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">

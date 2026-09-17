@@ -15,38 +15,38 @@ export default function FAQSection() {
 
   const faqs: FAQItem[] = [
     {
-      category: "TIMELINE & DELIVERY",
+      category: "DÉLAIS & LIVRAISON",
       question:
-        "What is the typical turnaround time for a 360° virtual tour or 3D render?",
+        "Quel est le délai moyen de livraison d'une visite virtuelle 360° ou d'un rendu 3D ?",
       answer:
-        "For existing built spaces requiring Pro3 LiDAR Matterport capture, raw spatial data processing and delivery takes 24 to 48 hours. For pre-construction 3D CGI architectural renders, delivery typically ranges from 5 to 10 business days per room, depending on design complexity and iteration feedback rounds.",
+        "Pour les espaces existants capturés via Matterport Pro3 LiDAR, le traitement des données spatiales et la livraison prennent entre 24 et 48 heures. Pour les rendus architecturaux 3D CGI sur plan, comptez entre 5 et 10 jours ouvrés par espace, selon la complexité des détails et les retours clients.",
     },
     {
-      category: "HARDWARE & TECH",
+      category: "TECHNOLOGIE & MATÉRIEL",
       question:
-        "What scanning hardware and LiDAR camera equipment do you deploy?",
+        "Quels équipements de numérisation et scanners LiDAR utilisez-vous ?",
       answer:
-        "We deploy industry-leading capture technology including Matterport Pro3 LiDAR cameras, Leica BLK360 laser scanners, custom 8K HDR panoramic camera rigs, and high-altitude 4K DJI Mavic Enterprise drones for full aerial photogrammetry.",
+        "Nous déployons les technologies de pointe de l'industrie : caméras LiDAR Matterport Pro3, scanners laser haute précision Leica BLK360, rigs panoramiques 8K HDR propriétaires, ainsi que des drones 4K DJI Enterprise pour la photogrammétrie aérienne complète.",
     },
     {
-      category: "HOSTING & EMBEDDING",
+      category: "HÉBERGEMENT & INTÉGRATION",
       question:
-        "How are the 3D virtual tours hosted and integrated onto our website?",
+        "Comment les visites virtuelles 3D sont-elles hébergées et intégrées sur notre site web ?",
       answer:
-        "All virtual tours are hosted on high-availability global CDN servers ensuring instantaneous loading times. We provide custom iframe code snippets, direct links, and offline standalone desktop/tablet packages suitable for sales gallery touchscreens and MLS listings.",
+        "Toutes nos visites sont hébergées sur des serveurs CDN mondiaux ultra-rapides, garantissant un chargement instantané. Nous fournissons des codes d'intégration iframe clés en main, des liens directs, ainsi que des packages autonomes compatibles tablettes et écrans tactiles de showrooms.",
     },
     {
-      category: "CUSTOMIZATION & BRANDING",
+      category: "PERSONNALISATION & BRANDING",
       question:
-        "Can we incorporate custom corporate branding, hotspots, and floorplans?",
+        "Pouvons-nous intégrer notre propre logo, des points d'intérêt (hotspots) et des plans de masse ?",
       answer:
-        "Absolutely. Every tour is customized with your agency logo, brand color palettes, custom interactive hotspots (linking to video tours, material specification sheets, or agent booking links), and interactive 2D/3D vector floorplans.",
+        "Absolument. Chaque expérience est personnalisée à votre image de marque : intégration de votre logo, palette de couleurs, balises interactives (vidéos, fiches techniques, liens de réservation) et plans 2D/3D schématiques interactifs.",
     },
     {
-      category: "PRICING & INVESTMENT",
-      question: "What is the investment range and project pricing structure?",
+      category: "TARIFS & INVESTISSEMENT",
+      question: "Quelle est votre structure tarifaire pour un projet spatial ?",
       answer:
-        "Our pricing is structured based on square footage, level of detail, and required output formats (e.g., Matterport twin vs. full 8K CGI rendering vs. VR package). Basic virtual walkthroughs start at $1,200 per property, while comprehensive luxury developer packages range from $5,000 to $25,000+.",
+        "Nos tarifs s'adaptent à la surface (m²), au niveau de modélisation et aux formats de sortie requis (jumeau numérique Matterport, rendu 8K CGI ou pack VR complet). Les forfaits débutent à partir de 8 000 DH (ou 800 €), avec des offres complètes sur-mesure pour les promoteurs et projets d'envergure.",
     },
   ];
 
@@ -62,10 +62,10 @@ export default function FAQSection() {
             FAQ
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mt-4 mb-4 leading-tight">
-            Frequently Asked Questions
+            Questions Fréquentes
           </h2>
           <p className="text-[#A19E9B] text-base font-light">
-            Everything you need to know about working with us. We combine strategic thinking, refined design, and seamless execution.
+            Tout ce que vous devez savoir sur notre processus de création. Nous associons vision stratégique, design raffiné et exécution technique irréprochable.
           </p>
         </div>
 
@@ -83,11 +83,12 @@ export default function FAQSection() {
                 }`}
               >
                 <button
+                  type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none"
+                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
                 >
                   <div>
-                    <span className="text-[10px]  uppercase tracking-widest text-terracotta block mb-1">
+                    <span className="text-[10px] uppercase tracking-widest text-terracotta block mb-1 font-medium">
                       {faq.category}
                     </span>
                     <h3 className="font-serif text-lg sm:text-xl font-bold text-white">

@@ -9,104 +9,109 @@ interface Project {
   id: string;
   title: string;
   subCategory: string;
-  category: "Interior" | "Pool" | "Bedroom" | "View" | "360°";
+  category: "Tous" | "Intérieur" | "Piscine" | "Chambre" | "Vue" | "360°";
   image: string;
 }
 
 const categories = [
-  "All",
-  "Interior",
-  "Pool",
-  "Bedroom",
-  "View",
+  "Tous",
+  "Intérieur",
+  "Piscine",
+  "Chambre",
+  "Vue",
   "360°",
 ] as const;
 
 const projects: Project[] = [
   {
     id: "1",
-    title: "Minimalist Teak Console",
-    subCategory: "Residential • Interior",
-    category: "Interior",
+    title: "Console Minimaliste en Teck",
+    subCategory: "Résidentiel • Intérieur",
+    category: "Intérieur",
     image: "/img(1).jpg",
   },
   {
     id: "2",
-    title: "Urban Sanctuary",
-    subCategory: "Residential • Bedroom",
-    category: "Bedroom",
+    title: "Sanctuaire Urbain",
+    subCategory: "Résidentiel • Chambre",
+    category: "Chambre",
     image: "/img(2).jpg",
   },
   {
     id: "3",
-    title: "Geometric Lounge Suite",
-    subCategory: "Commercial • Interior",
-    category: "Interior",
+    title: "Salon Géométrique Moderne",
+    subCategory: "Commercial • Intérieur",
+    category: "Intérieur",
     image: "/img(3).jpg",
   },
   {
     id: "4",
-    title: "Brutalist Concrete Salon",
-    subCategory: "Residential • Interior",
-    category: "Interior",
+    title: "Salon Béton Brutaliste",
+    subCategory: "Résidentiel • Intérieur",
+    category: "Intérieur",
     image: "/img(4).jpg",
   },
   {
     id: "5",
-    title: "Aegean Waterfront Terrace",
-    subCategory: "Outdoor • Pool & Deck",
-    category: "Pool",
+    title: "Terrasse Égéenne Face Mer",
+    subCategory: "Extérieur • Piscine & Terrasse",
+    category: "Piscine",
     image: "/img(5).jpg",
   },
   {
     id: "7",
-    title: "Nordic Minimalist Hall",
-    subCategory: "Residential • 360°",
+    title: "Hall Minimaliste Nordique",
+    subCategory: "Résidentiel • 360°",
     category: "360°",
     image: "/img(7).jpg",
   },
   {
     id: "8",
-    title: "Linear Charcoal Kitchen",
-    subCategory: "Residential • Interior",
-    category: "Interior",
+    title: "Cuisine Linéaire Anthracite",
+    subCategory: "Résidentiel • Intérieur",
+    category: "Intérieur",
     image: "/img(8).jpg",
   },
   {
     id: "9",
-    title: "Winter Chalet Library",
+    title: "Bibliothèque Chalet d'Hiver",
     subCategory: "Penthouse • 360°",
     category: "360°",
     image: "/img(9).jpg",
   },
   {
     id: "10",
-    title: "Double-Height Glass Atrium",
-    subCategory: "Architectural • View",
-    category: "View",
+    title: "Atrium Vitré Double Hauteur",
+    subCategory: "Architectural • Vue",
+    category: "Vue",
     image: "/img(10).jpg",
   },
 ];
 
 export default function GallerySection() {
-  const [activeTab, setActiveTab] = useState<string>("All");
+  const [activeTab, setActiveTab] = useState<string>("Tous");
   const [selectedImage, setSelectedImage] = useState<Project | null>(null);
 
   const filteredProjects =
-    activeTab === "All"
+    activeTab === "Tous"
       ? projects
       : projects.filter((p) => p.category === activeTab);
 
   return (
-    <section id="gallery" className="pb-24 pt-30 bg-dark-bg relative overflow-hidden">
+    <section id="portfolio" className="pb-24 pt-30 bg-dark-bg relative overflow-hidden">
       <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-lg max-w-sm mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-1 rounded-full border border-terracotta/20">
-            Our Work
+            Nos Réalisations
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight mt-4">Recent Projects</h2>
-          <p className="text-[#A19E9B] text-base sm:text-lg font-light">Explore our latest transformations and discover what&apos;s possible for your space</p>
+          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight mt-4">
+            Projets Récents
+          </h2>
+          <p className="text-[#A19E9B] text-base sm:text-lg font-light">
+            Découvrez nos dernières visualisations immersives et donnez une nouvelle dimension à vos espaces
+          </p>
         </div>
+
         {/* Centered Minimal Filter Tabs */}
         <div className="flex items-center justify-center mb-14">
           <div className="inline-flex items-center gap-1 sm:gap-2 p-1 rounded-xl bg-[#181615]/80 border border-white/5 backdrop-blur-md">
@@ -114,6 +119,7 @@ export default function GallerySection() {
               const isActive = activeTab === tab;
               return (
                 <button
+                  type="button"
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`px-4 sm:px-5 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 cursor-pointer ${
@@ -203,8 +209,9 @@ export default function GallerySection() {
 
               {/* Close Button */}
               <button
+                type="button"
                 onClick={() => setSelectedImage(null)}
-                aria-label="Close image preview"
+                aria-label="Fermer l'aperçu"
                 className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-black text-white/80 hover:text-white border border-white/15 flex items-center justify-center transition-all cursor-pointer"
               >
                 <X className="w-5 h-5" />

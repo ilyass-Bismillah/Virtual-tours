@@ -4,21 +4,21 @@ import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "./ui/button";
 
 const navigationLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "Our Services", href: "#services" },
-  { label: "Case Studies", href: "#projects" },
-  { label: "360° Showcase", href: "#showcase" },
-  { label: "FAQ & Pricing", href: "#faq" },
-  { label: "Contact Studio", href: "#contact" },
+  { label: "Accueil", href: "#hero" },
+  { label: "Nos Services", href: "#services" },
+  { label: "Études de Cas", href: "#projects" },
+  { label: "Showcase 360°", href: "#showcase" },
+  { label: "FAQ & Tarifs", href: "#faq" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const capabilitiesLinks = [
-  { label: "360° Walkthroughs", href: "#services" },
-  { label: "3D Architectural CGI", href: "#services" },
-  { label: "Matterport Pro3 Scans", href: "#services" },
-  { label: "Spatial VR (Vision Pro)", href: "#services" },
-  { label: "Interactive CAD Floorplans", href: "#services" },
-  { label: "Commercial Twins", href: "#services" },
+  { label: "Visites Immersives 360°", href: "#services" },
+  { label: "Rendus 3D & CGI Architecture", href: "#services" },
+  { label: "Scans Matterport Pro3", href: "#services" },
+  { label: "VR Spatiale (Vision Pro)", href: "#services" },
+  { label: "Plans d'Étage Interactifs", href: "#services" },
+  { label: "Jumeaux Numériques Commerciaux", href: "#services" },
 ];
 
 const socialLinks = [
@@ -31,7 +31,7 @@ const socialLinks = [
 export default function CTABannerFooter() {
   return (
     <footer className="bg-dark-bg relative overflow-hidden text-white border-t border-white/10">
-      {/* 1. High-Contrast Warm Accent CTA Banner */}
+      {/* 1. High-Contrast Accent CTA Banner */}
       <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-terracotta-hover via-terracotta to-[#818cf8] overflow-hidden">
         {/* Subtle Ambient Radial Light */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18)_0,transparent_70%)] pointer-events-none" />
@@ -39,23 +39,25 @@ export default function CTABannerFooter() {
         <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-lg max-w-sm mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="max-w-2xl">
             <span className="text-xs uppercase tracking-widest text-white/90 bg-white/15 px-3.5 py-1 rounded-full border border-white/20 inline-block mb-4 font-medium backdrop-blur-sm">
-              Start Your Spatial Transformation
+              Lancez Votre Transformation Spatiale
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
-              Ready to Digitally Transform Your Space?
+              Prêt à Digitaliser Votre Espace ?
             </h2>
             <p className="text-white/90 text-sm sm:text-base mt-3 font-light leading-relaxed">
-              Join leading global developers and luxury real estate agencies
-              elevating off-plan presales with photorealistic 3D walkthroughs.
+              Rejoignez les promoteurs et agences immobilières d&apos;exception
+              qui boostent leurs préventes grâce à des visites 3D
+              photoréalistes.
             </p>
           </div>
-          <a
-            href="#contact"
-          >
-          <Button variant={"default"} className="flex items-center gap-5 px-5 rounded-2xl">
-            <span>Book a Consultation</span>
-            <MoveRight className="w-5 h-5 text-terracotta" />
-          </Button>
+          <a href="#contact">
+            <Button
+              variant={"default"}
+              className="flex items-center gap-5 px-5 rounded-2xl"
+            >
+              <span>Réserver une Démonstration</span>
+              <MoveRight className="w-5 h-5 text-terracotta" />
+            </Button>
           </a>
         </div>
       </div>
@@ -66,18 +68,15 @@ export default function CTABannerFooter() {
           {/* Brand Info (5 Columns) */}
           <div className="lg:col-span-5">
             <a href="#hero" className="flex items-center gap-3 mb-5 group">
-              <div className="w-10 h-10 rounded-xl bg-terracotta flex items-center justify-center text-white shadow-lg shadow-terracotta/30 group-hover:scale-105 transition-transform">
-                <Compass className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-xl bg-linear-to-br from-terracotta to-[#818cf8] flex items-center justify-center text-white shadow-lg shadow-terracotta/20 group-hover:shadow-terracotta/40 transition-all duration-300">
+                <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" />
               </div>
               <span className="font-serif text-2xl font-bold tracking-wider text-white">
-                PERSPEC<span className="text-terracotta">.</span>
+                Parallax
               </span>
             </a>
             <p className="text-sm text-[#A19E9B] font-light leading-relaxed max-w-sm mb-6">
-              Premier architectural visualization and spatial intelligence
-              agency. We build photorealistic virtual walkthroughs, LiDAR scans,
-              and VR experiences for luxury residential and commercial
-              architecture.
+              Des visites 3D immersives pour les marques de l&apos;immobilier, de l&apos;hôtellerie et du commerce qui veulent être vues avant les autres.
             </p>
           </div>
 
@@ -103,7 +102,7 @@ export default function CTABannerFooter() {
           {/* Capabilities Links (2 Columns) */}
           <div className="lg:col-span-2">
             <h4 className="text-xs uppercase tracking-wider text-white font-semibold mb-4">
-              Capabilities
+              Expertises
             </h4>
             <ul className="space-y-3 text-sm text-[#A19E9B]">
               {capabilitiesLinks.map((service) => (
@@ -127,23 +126,23 @@ export default function CTABannerFooter() {
             <ul className="space-y-3 text-sm text-[#A19E9B]">
               <li>
                 <a
-                  href="mailto:hello@perspec.design"
+                  href="mailto:contact@perspec.design"
                   className="hover:text-terracotta transition-colors font-medium text-white/90"
                 >
-                  hello@perspec.design
+                  contact@parallax.design
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+212528000000"
                   className="hover:text-terracotta transition-colors"
                 >
-                  +1 (555) 123-4567
+                  +212 5 28 00 00 00
                 </a>
               </li>
               <li className="pt-2 text-white/70 leading-relaxed font-light">
-                123 Design Street, Suite 400 <br />
-                New York, NY 10001
+                Boulevard Mohammed V <br />
+                Casablanca, Maroc
               </li>
             </ul>
           </div>
@@ -151,10 +150,7 @@ export default function CTABannerFooter() {
 
         {/* 3. Footer Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-[#A19E9B]">
-          <p>
-            © {new Date().getFullYear()} PERSPEC Studios Inc. All rights
-            reserved.
-          </p>
+          <p>© {new Date().getFullYear()} Parallax. Tous droits réservés.</p>
 
           {/* Social Icons */}
           <div className="flex items-center gap-4">

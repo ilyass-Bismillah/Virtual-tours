@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MoveRight, Menu, X, Compass, PhoneCall } from "lucide-react";
+import { MoveRight, Menu, X, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface NavbarProps {
@@ -27,10 +27,10 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#hero" },
+    { name: "Accueil", href: "#hero" },
     { name: "Services", href: "#services" },
     { name: "Portfolio", href: "#portfolio" },
-    { name: "360° Showcase", href: "#showcase" },
+    { name: "Showcase 360°", href: "#showcase" },
     { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" },
   ];
@@ -53,7 +53,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
             <div className="w-10 h-10 rounded-xl bg-linear-to-br from-terracotta to-[#818cf8] flex items-center justify-center text-white shadow-lg shadow-terracotta/20 group-hover:shadow-terracotta/40 transition-all duration-300">
               <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" />
             </div>
-            <div className="">
+            <div>
               <span className="font-serif text-2xl font-bold tracking-wider text-white flex items-center gap-1">
                 Parallax
               </span>
@@ -95,9 +95,10 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
 
           {/* Mobile Menu Trigger */}
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg bg-dark-surface border border-white/10 text-white hover:text-terracotta focus:outline-none"
-            aria-label="Toggle Navigation Menu"
+            className="md:hidden p-2 rounded-lg bg-dark-surface border border-white/10 text-white hover:text-terracotta focus:outline-none cursor-pointer"
+            aria-label="Ouvrir le menu de navigation"
           >
             {mobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -135,10 +136,13 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
                   setMobileMenuOpen(false);
                   if (onBookDemoClick) onBookDemoClick();
                 }}
-                className="mt-4 flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-terracotta text-white text-center font-medium shadow-lg shadow-terracotta/30"
               >
-                <PhoneCall className="w-4 h-4" />
-                <span>Book a Demo</span>
+                <Button
+                  variant={"linear"}
+                  className="items-center gap-4 py-6 px-5"
+                >
+                  <span className="text-base">Demander un devis</span>
+                </Button>
               </a>
             </div>
           </motion.div>

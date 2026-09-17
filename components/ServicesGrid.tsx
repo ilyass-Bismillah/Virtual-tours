@@ -15,6 +15,7 @@ import {
   LucideIcon,
 } from "lucide-react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button"
 
 interface ServiceItem {
   id: string;
@@ -284,19 +285,20 @@ export default function ServicesGrid() {
                 </div>
 
                 <div className="flex justify-end gap-3">
-                  <button
+                  <Button
+                    variant={"outline"}
                     type="button"
                     onClick={() => setSelectedService(null)}
-                    className="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white text-xs font-medium transition-colors cursor-pointer"
                   >
                     Fermer
-                  </button>
+                  </Button>
                   <a
                     href="#contact"
                     onClick={() => setSelectedService(null)}
-                    className="px-6 py-2.5 rounded-xl bg-terracotta hover:bg-terracotta-hover text-white text-xs font-medium transition-colors shadow-lg shadow-terracotta/30"
                   >
+                    <Button variant={"linear"}>
                     Demander une Proposition
+                    </Button>
                   </a>
                 </div>
               </div>

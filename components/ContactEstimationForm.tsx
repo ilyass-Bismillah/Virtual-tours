@@ -10,6 +10,7 @@ import {
   Clock,
   Loader2,
   Check,
+  Lock,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -59,7 +60,7 @@ export default function ContactEstimationForm() {
 
       if (!res.ok) {
         throw new Error(
-          data.error || "Une erreur est survenue. Veuillez réessayer."
+          data.error || "Une erreur est survenue. Veuillez réessayer.",
         );
       }
 
@@ -111,8 +112,8 @@ export default function ContactEstimationForm() {
               </h2>
               <p className="text-[#A19E9B] font-light text-lg leading-relaxed mb-8">
                 Prêt à valoriser vos espaces ? Remplissez ce formulaire et notre
-                équipe d&apos;experts vous contactera sous 24 heures pour planifier
-                votre démonstration personnalisée.
+                équipe d&apos;experts vous contactera sous 24 heures pour
+                planifier votre démonstration personnalisée.
               </p>
 
               {/* Contact Details List */}
@@ -172,8 +173,9 @@ export default function ContactEstimationForm() {
                   </h4>
                 </div>
                 <p className="text-xs text-[#A19E9B] font-light">
-                  Nous analysons vos spécifications spatiales sous 4 heures ouvrées
-                  et vous fournissons une proposition tarifaire détaillée en 24 heures.
+                  Nous analysons vos spécifications spatiales sous 4 heures
+                  ouvrées et vous fournissons une proposition tarifaire
+                  détaillée en 24 heures.
                 </p>
               </div>
             </div>
@@ -198,8 +200,9 @@ export default function ContactEstimationForm() {
                       Demande Reçue avec Succès !
                     </h4>
                     <p className="text-sm text-[#A19E9B] max-w-md mx-auto mb-8 font-light">
-                      Merci pour votre confiance. Notre équipe étudie votre projet et
-                      vous transmettra une proposition sur-mesure dans les plus brefs délais.
+                      Merci pour votre confiance. Notre équipe étudie votre
+                      projet et vous transmettra une proposition sur-mesure dans
+                      les plus brefs délais.
                     </p>
                     <Button
                       type="button"
@@ -217,7 +220,7 @@ export default function ContactEstimationForm() {
                       </div>
                     )}
 
-                    <div className="space-y-2">
+                    <div className="space-y-2 pb-6">
                       <h2 className="text-2xl font-bold text-white">
                         Obtenez votre Visite 3D personnalisée
                       </h2>
@@ -229,43 +232,39 @@ export default function ContactEstimationForm() {
 
                     {/* Nom complet */}
                     <div className="grid grid-cols-1">
-                      <div>
-                        <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
-                          Nom complet *
-                        </label>
-                        <Input
-                          type="text"
-                          required
-                          placeholder="Jeanne Dupont"
-                          value={formData.nomComplet}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              nomComplet: e.target.value,
-                            })
-                          }
-                          className="w-full px-4 py-3 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm focus:outline-none focus:border-terracotta transition-colors placeholder:text-white/30"
-                        />
-                      </div>
+                      <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
+                        Nom complet *
+                      </label>
+                      <Input
+                        type="text"
+                        required
+                        placeholder="Jeanne Dupont"
+                        value={formData.nomComplet}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            nomComplet: e.target.value,
+                          })
+                        }
+                        className="w-full px-4 py-3 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm focus:outline-none focus:border-terracotta transition-colors placeholder:text-white/30"
+                      />
                     </div>
 
                     {/* Email */}
                     <div className="grid grid-cols-1">
-                      <div>
-                        <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
-                          Email professionnel *
-                        </label>
-                        <Input
-                          type="email"
-                          required
-                          placeholder="jeanne@entreprise.com"
-                          value={formData.email}
-                          onChange={(e) =>
-                            setFormData({ ...formData, email: e.target.value })
-                          }
-                          className="w-full px-4 py-3 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm focus:outline-none focus:border-terracotta transition-colors placeholder:text-white/30"
-                        />
-                      </div>
+                      <label className="block text-xs uppercase tracking-wider text-[#A19E9B] mb-2">
+                        Email professionnel *
+                      </label>
+                      <Input
+                        type="email"
+                        required
+                        placeholder="jeanne@entreprise.com"
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
+                        className="w-full px-4 py-3 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm focus:outline-none focus:border-terracotta transition-colors placeholder:text-white/30"
+                      />
                     </div>
 
                     {/* Téléphone & Type d'activité */}
@@ -280,7 +279,10 @@ export default function ContactEstimationForm() {
                           placeholder="+212 6 00 00 00 00"
                           value={formData.telephone}
                           onChange={(e) =>
-                            setFormData({ ...formData, telephone: e.target.value })
+                            setFormData({
+                              ...formData,
+                              telephone: e.target.value,
+                            })
                           }
                           className="w-full px-4 py-3 rounded-xl bg-dark-elevated border border-white/10 text-white text-sm focus:outline-none focus:border-terracotta transition-colors placeholder:text-white/30"
                         />
@@ -331,6 +333,11 @@ export default function ContactEstimationForm() {
                         </>
                       )}
                     </Button>
+
+                    <div className="flex items-center justify-center gap-3 text-xs text-gray-400">
+                      <Lock className="w-4 h-4" />
+                      <p>Vos informations restent privées. Jamais de spam.</p>
+                    </div>
                   </form>
                 )}
               </AnimatePresence>

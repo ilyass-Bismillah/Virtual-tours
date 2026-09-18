@@ -37,7 +37,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 flex flex-col items-start"
           >
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0d1f1f]/60 border border-[#1b3a38] text-[#9cb1ad] text-xs sm:text-sm font-normal backdrop-blur-md">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0d1f1f]/60 border border-terracotta/20 text-[#9cb1ad] text-xs sm:text-sm font-normal backdrop-blur-md">
               <span className="w-3 md:w-2 h-2 rounded-full bg-terracotta animate-pulse" />
               <span>
                 Visites virtuelles 3D immersives pour l&apos;immobilier,
@@ -72,7 +72,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-8 sm:gap-12 pt-10">
               <div className="flex flex-col">
                 <span className="font-sans text-3xl sm:text-4xl font-normal text-white tracking-tight leading-none">
-                  500+
+                  100+
                 </span>
                 <span className="text-xs sm:text-sm text-gray-200 mt-2 font-normal">
                   visites livrées
@@ -87,7 +87,7 @@ export default function HeroSection() {
                   48h
                 </span>
                 <span className="text-xs sm:text-sm text-gray-200 mt-2 font-normal">
-                  délai moyen
+                  Délais Livraison
                 </span>
               </div>
 

@@ -35,7 +35,7 @@ export default function FeaturesGrid() {
           Pourquoi les équipes font passer leurs annonces en 3D
         </h2>
         <p className="text-gray-400 max-w-lg">
-          Les photos classiques demandent à imaginer. Une visite Parallax permet
+          Les photos classiques demandent à imaginer. Une visite Vortex 3D tours permet
           de vivre l&apos;expérience — et cela change la vitesse de décision.
         </p>
       </div>

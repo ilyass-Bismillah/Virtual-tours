@@ -35,7 +35,7 @@ export default function UseCasesSection() {
             Conçu pour les espaces où l&apos;on décide en marchant
           </h2>
           <p className="text-sm sm:text-base text-[#8c92a4] max-w-sm md:text-left leading-relaxed font-light">
-            Partout où une décision se prend en visitant un lieu, une visite Parallax arrive la première.
+            Partout où une décision se prend en visitant un lieu, une visite Vortex 3D tours arrive la première.
           </p>
         </div>
 

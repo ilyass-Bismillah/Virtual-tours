@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ShowreelModal from "@/components/ShowreelModal";
 import ServicesGrid from "@/components/ServicesGrid";
 import MetricsBar from "@/components/MetricsBar";
 import PortfolioSection from "@/components/PortfolioSection";
@@ -17,8 +15,6 @@ import DemoPreviewSection from "@/components/DemoPreviewSection";
 import UseCasesSection from "@/components/UseCasesSection";
 
 export default function Home() {
-  const [showreelOpen, setShowreelOpen] = useState(false);
-
   const handleBookDemoClick = () => {
     const contactSection = document.getElementById("contact");
     if (contactSection) {
@@ -64,11 +60,6 @@ export default function Home() {
       {/* 9. CTA Banner & Rich Footer */}
       <CTABannerFooter />
 
-      {/* Showreel Modal Dialog */}
-      <ShowreelModal
-        isOpen={showreelOpen}
-        onClose={() => setShowreelOpen(false)}
-      />
     </main>
   );
 }

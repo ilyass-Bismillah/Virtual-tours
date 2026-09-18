@@ -14,7 +14,7 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-        "AURA 3D a totalement transformé notre processus de commercialisation en VEFA pour les Résidences Grand Horizon. Leurs visites immersives 360° ont permis à des acquéreurs internationaux à Londres et Tokyo de visiter les penthouses avant la fin des travaux. Nous avons prévendu 85% des lots.",
+        "Vortex 3D tours a totalement transformé notre processus de commercialisation en VEFA pour les Résidences Grand Horizon. Leurs visites immersives 360° ont permis à des acquéreurs internationaux à Londres et Tokyo de visiter les penthouses avant la fin des travaux. Nous avons prévendu 85% des lots.",
       author: "Marcus Vance",
       title: "Vice-Président Développement Résidentiel de Luxe",
       company: "Sotheby's International Realty",
@@ -32,7 +32,7 @@ export default function TestimonialsSection() {
     },
     {
       quote:
-        "L'intégration des casques VR Apple Vision Pro conçus par AURA 3D dans nos espaces de vente a généré un engagement record. Nos prospects passent en moyenne 25 minutes à explorer chaque pièce en totale immersion avant de prendre leur décision.",
+        "L'intégration des casques VR Apple Vision Pro conçus par Vortex 3D tours dans nos espaces de vente a généré un engagement record. Nos prospects passent en moyenne 25 minutes à explorer chaque pièce en totale immersion avant de prendre leur décision.",
       author: "Tariq Al-Maktoum",
       title: "Directeur Marketing & Ventes",
       company: "Emaar Luxury Holdings",

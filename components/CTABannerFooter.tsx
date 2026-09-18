@@ -61,7 +61,7 @@ export default function CTABannerFooter() {
                 <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" />
               </div>
               <span className="font-serif text-2xl font-bold tracking-wider text-white">
-                Vortex 3D tours
+                Vortex <span className="text-terracotta">3D</span> tours
               </span>
             </a>
             <p className="text-sm text-[#A19E9B] font-light leading-relaxed max-w-sm mb-6">

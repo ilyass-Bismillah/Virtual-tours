@@ -27,7 +27,7 @@ export default function DemoPreviewSection() {
           À voir pour y croire
         </h2>
         <p className="text-sm sm:text-base text-[#8e94a0] max-w-xl mx-auto mb-10 leading-relaxed font-light">
-          Une vraie visite Parallax, intégrée exactement comme elle le serait
+          Une vraie visite Vortex 3D tours, intégrée exactement comme elle le serait
           sur votre propre site.
         </p>
 

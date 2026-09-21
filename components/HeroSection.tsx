@@ -117,14 +117,14 @@ export default function HeroSection() {
                   delay: 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="relative z-20 w-[70%]"
+                className="relative z-20 w-[40%]"
               >
                 <div
                   style={{ animationDelay: "0s" }}
                   className="aspect-[3/4.6] rounded-xl overflow-hidden shadow-2xl shadow-black/80 animate-float2 relative"
                 >
                   <Image
-                    src="/image1.avif"
+                    src="/imghero2.avif"
                     alt="Modern Minimalist Interior"
                     fill
                     className="object-cover"
@@ -141,14 +141,14 @@ export default function HeroSection() {
                   delay: 0.25,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="relative z-10 w-[70%] -ml-40 -translate-y-12"
+                className="relative z-10 w-[40%] -ml-20 -translate-y-12"
               >
                 <div
                   style={{ animationDelay: "-2.3s" }}
                   className="aspect-[3/4.6] rounded-xl overflow-hidden shadow-xl shadow-black/60 animate-float2 relative"
                 >
                   <Image
-                    src="/image2.avif"
+                    src="/imghero1.jpg"
                     alt="Cozy Aesthetic Bedroom"
                     fill
                     className="object-cover"
@@ -165,14 +165,14 @@ export default function HeroSection() {
                   delay: 0.4,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="relative z-0 w-[70%] -ml-40"
+                className="relative z-0 w-[40%] -ml-20"
               >
                 <div
                   style={{ animationDelay: "-4.6s" }}
                   className="aspect-[3/4.6] rounded-xl overflow-hidden shadow-lg animate-float2 relative"
                 >
                   <Image
-                    src="/image3.avif"
+                    src="/imghero3.jpg"
                     alt="Architectural Suite Details"
                     fill
                     className="object-cover"

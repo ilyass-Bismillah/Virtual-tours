@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MoveRight, Menu, X, Compass } from "lucide-react";
+import { Menu, X, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link"
 
 interface NavbarProps {
   onBookDemoClick?: () => void;
@@ -27,7 +28,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { name: "Accueil", href: "#hero" },
+    { name: "Accueil", href: "/" },
     { name: "Services", href: "#services" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Showcase 360°", href: "#showcase" },
@@ -46,8 +47,8 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
       >
         <div className="2xl:max-w-7xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <a
-            href="#hero"
+          <Link
+            href="/"
             className="flex items-center gap-3 group focus:outline-none"
           >
             <div className="w-10 h-10 rounded-xl bg-linear-to-br from-terracotta to-[#818cf8] flex items-center justify-center text-white shadow-lg shadow-terracotta/20 group-hover:shadow-terracotta/40 transition-all duration-300">
@@ -58,24 +59,24 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
                 Vortex <span className="text-terracotta">3D</span> tours
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-8 glass-card px-6 py-2 rounded-full border-white/10">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-sm font-medium text-[#F5F3F0]/80 hover:text-terracotta transition-colors duration-300 relative group py-1"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-terracotta transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* Desktop CTA Button */}
-          <a
+          <Link
             href="#contact"
             onClick={(e) => {
               if (onBookDemoClick) {
@@ -90,7 +91,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
             >
               <span>Demander un devis</span>
             </Button>
-          </a>
+          </Link>
 
           {/* Mobile Menu Trigger */}
           <button
@@ -120,16 +121,16 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-lg font-medium text-white/90 hover:text-terracotta py-2 border-b border-white/5 transition-colors"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
-              <a
+              <Link
                 href="#contact"
                 onClick={() => {
                   setMobileMenuOpen(false);
@@ -142,7 +143,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
                 >
                   <span className="text-base">Demander un devis</span>
                 </Button>
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

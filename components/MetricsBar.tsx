@@ -68,12 +68,12 @@ function Counter({ target }: { target: number }) {
 
 export default function MetricsBar() {
   return (
-    <section className="relative py-24 bg-linear-to-r from-dark-bg via-terracotta/5 to-dark-bg overflow-hidden">
+    <section className="relative py-15 bg-linear-to-r from-dark-bg via-terracotta/5 to-dark-bg overflow-hidden">
       {/* Lignes d'accent supérieures et inférieures */}
       <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl max-w-sm mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl max-w-sm mx-auto px-5 lg:px-0">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-8">
           {stats.map((stat, idx) => (
             <motion.div

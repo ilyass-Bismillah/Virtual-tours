@@ -196,12 +196,12 @@ export default function Interactive360Showcase() {
   return (
     <section
       id="showcase"
-      className="py-24 md:py-32 bg-dark-bg relative overflow-hidden"
+      className="py-15 bg-dark-bg relative overflow-hidden"
     >
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-125 bg-terracotta/10 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto relative z-10 px-5 lg:px-0">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-2 rounded-full border border-terracotta/20 inline-flex items-center gap-2">

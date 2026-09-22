@@ -1,7 +1,8 @@
-import { Compass } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "./ui/button";
+import Image from "next/image"
+import Link from "next/link"
 
 const navigationLinks = [
   { label: "Accueil", href: "#hero" },
@@ -30,9 +31,9 @@ const socialLinks = [
 
 export default function CTABannerFooter() {
   return (
-    <footer className="bg-dark-bg relative overflow-hidden text-white border-t border-white/10 px-3 md:px-0">
+    <footer className="bg-dark-bg relative overflow-hidden text-white border-t border-white/10">
       {/* 1. High-Contrast Accent CTA Banner */}
-      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto relative my-20 rounded-2xl py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-terracotta-hover/10 via-terracotta-hover/5 to-[#818cf8]/20 overflow-hidden">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto px-5 lg:px-0 relative my-20 rounded-2xl py-20 bg-linear-to-r from-terracotta-hover/10 via-terracotta-hover/5 to-[#fc4fa8]/20 overflow-hidden">
         <div className="relative z-10 flex flex-col items-center justify-between gap-8 text-center">
           <div className="max-w-2xl">
             <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
@@ -52,19 +53,17 @@ export default function CTABannerFooter() {
       </div>
 
       {/* 2. Main Footer Body */}
-      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 relative z-10">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto pt-20 pb-12 relative z-10 px-5 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-16 pb-12 border-b border-white/10">
           {/* Brand Info (5 Columns) */}
           <div className="lg:col-span-5">
-            <a href="#hero" className="flex items-center gap-3 mb-5 group">
-              <div className="w-10 h-10 rounded-xl bg-linear-to-br from-terracotta to-[#818cf8] flex items-center justify-center text-white shadow-lg shadow-terracotta/20 group-hover:shadow-terracotta/40 transition-all duration-300">
-                <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" />
-              </div>
-              <span className="font-serif text-2xl font-bold tracking-wider text-white">
-                Vortex <span className="text-terracotta">3D</span> tours
-              </span>
-            </a>
-            <p className="text-sm text-[#A19E9B] font-light leading-relaxed max-w-sm mb-6">
+            <Link
+            href="/"
+            className=""
+          >
+              <Image src="/main-logo.png" alt="logo" width={300} height={100} className="object-cover"/>
+          </Link>
+            <p className="text-sm text-[#A19E9B] font-light leading-relaxed max-w-sm mt-6">
               Des visites 3D immersives pour les marques de l&apos;immobilier,
               de l&apos;hôtellerie et du commerce qui veulent être vues avant
               les autres.

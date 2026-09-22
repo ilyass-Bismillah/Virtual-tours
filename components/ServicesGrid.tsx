@@ -143,12 +143,12 @@ export default function ServicesGrid() {
   return (
     <section
       id="services"
-      className="py-24 md:py-32 bg-dark-bg relative overflow-hidden"
+      className="py-15 bg-dark-bg relative overflow-hidden"
     >
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-terracotta/10 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl max-w-sm mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl max-w-sm mx-auto relative z-10 px-5 lg:px-0">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-1 rounded-full border border-terracotta/20">

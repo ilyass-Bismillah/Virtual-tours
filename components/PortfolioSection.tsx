@@ -98,8 +98,8 @@ export default function GallerySection() {
       : projects.filter((p) => p.category === activeTab);
 
   return (
-    <section id="portfolio" className="pb-24 pt-30 bg-dark-bg relative overflow-hidden">
-      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="py-15 bg-dark-bg relative overflow-hidden">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto px-5 lg:px-0">
         <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-1 rounded-full border border-terracotta/20">
             Nos Réalisations

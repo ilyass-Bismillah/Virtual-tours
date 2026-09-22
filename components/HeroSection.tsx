@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex items-center overflow-hidden bg-dark-bg"
+      className="relative pt-15 md:pt-30 w-full flex items-center overflow-hidden bg-dark-bg"
     >
       {/* Background Architectural Video */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -28,7 +28,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-linear-to-t from-[#0E0D0D] via-transparent to-black/50" />
       </div>
 
-      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl max-w-sm mx-auto px-6 sm:px-8 lg:px-12 w-full pt-32 pb-20 relative z-10">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl max-w-sm mx-auto w-full py-15 relative z-10 px-5 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Side: Typography & CTAs */}
           <motion.div
@@ -37,7 +37,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 flex flex-col items-start"
           >
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0d1f1f]/60 border border-terracotta/20 text-[#9cb1ad] text-xs sm:text-sm font-normal backdrop-blur-md">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-terracotta/20 border border-terracotta/20 text-gray-300 text-xs sm:text-sm font-normal backdrop-blur-3xl">
               <span className="w-3 md:w-2 h-2 rounded-full bg-terracotta animate-pulse" />
               <span>
                 Visites virtuelles 3D immersives pour l&apos;immobilier,
@@ -106,8 +106,8 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Right Side: Overlapping Luxury Visual Cards */}
-          <div className="lg:col-span-6 relative flex justify-end">
-            <div className="relative flex items-center justify-end w-full pt-10 lg:pt-0">
+          <div className="lg:col-span-6 relative flex lg:justify-end">
+            <div className="relative flex items-center lg:justify-end justify-center w-full pt-10 lg:pt-0">
               {/* Card 1 */}
               <motion.div
                 initial={{ opacity: 0, y: 40 }}

@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Compass } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link"
+import Image from "next/image";
 
 interface NavbarProps {
   onBookDemoClick?: () => void;
@@ -45,20 +46,13 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
             : "bg-linear-to-b from-dark-bg/90 to-transparent py-5"
         }`}
       >
-        <div className="2xl:max-w-7xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto flex items-center justify-between px-5 lg:px-0">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 group focus:outline-none"
+            className=""
           >
-            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-terracotta to-[#818cf8] flex items-center justify-center text-white shadow-lg shadow-terracotta/20 group-hover:shadow-terracotta/40 transition-all duration-300">
-              <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" />
-            </div>
-            <div>
-              <span className="font-serif text-2xl font-bold tracking-wider text-white flex items-center gap-1">
-                Vortex <span className="text-terracotta">3D</span> tours
-              </span>
-            </div>
+              <Image src="/main-logo.png" alt="logo" width={300} height={100} className="object-cover w-60 md:w-full"/>
           </Link>
 
           {/* Desktop Nav Links */}

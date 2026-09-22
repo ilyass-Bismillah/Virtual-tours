@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
   title: "Vortex 3D Tours — Visites Virtuelles 3D & Expériences Immersives",
   icons: {
-    icon: "/virtual-reality.png", 
+    icon: "/favicon.png", 
   },
   description:
     "Sublimez vos projets immobiliers, d'architecture et d'hôtellerie grâce à nos visites virtuelles 360°, scans Matterport LiDAR, rendus 3D photoréalistes et expériences VR.",

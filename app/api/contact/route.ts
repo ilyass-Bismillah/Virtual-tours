@@ -6,7 +6,7 @@ export async function POST(req: Request) {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       return NextResponse.json(
-        { error: "La clé API Resend n'est pas configurée." },
+        { error: "La clé API n'est pas configurée." },
         { status: 500 }
       );
     }
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
 
     const { data, error } = await resend.emails.send({
       from: "Virtual Tours <onboarding@resend.dev>",
-      to: ["ilyassbis@gmail.com"], 
+      to: ["ilyassbis@gmail.com"],
       replyTo: email,
       subject: `Nouvelle demande démo 3D : ${nomComplet} (${typeDactivité})`,
       html: `

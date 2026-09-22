@@ -85,12 +85,12 @@ export default function ContactEstimationForm() {
   return (
     <section
       id="contact"
-      className="py-24 md:py-32 bg-[#141312] relative overflow-hidden"
+      className="py-15 bg-[#141312] relative overflow-hidden"
     >
       {/* Ambient background glow */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-terracotta/15 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto relative z-10 px-5 lg:px-0">
         <div className="flex flex-col items-center justify-center mb-20 space-y-5">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracotta/10 border border-terracotta/20 text-terracotta text-xs font-semibold uppercase tracking-wider mb-6">
             Contactez-nous

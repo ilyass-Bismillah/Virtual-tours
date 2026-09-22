@@ -53,9 +53,9 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="py-24 md:py-32 bg-dark-bg relative overflow-hidden"
+      className="py-15 bg-dark-bg relative overflow-hidden"
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-4xl px-5 lg:px-0 mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-2 rounded-full border border-terracotta/20 inline-flex items-center gap-2">

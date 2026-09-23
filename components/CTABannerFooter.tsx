@@ -36,7 +36,7 @@ export default function CTABannerFooter() {
       <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto px-5 lg:px-0 relative my-20 rounded-2xl py-20 bg-linear-to-r from-terracotta-hover/10 via-terracotta-hover/5 to-[#fc4fa8]/20 overflow-hidden">
         <div className="relative z-10 flex flex-col items-center justify-between gap-8 text-center">
           <div className="max-w-2xl">
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-white leading-tight">
               Vos concurrents sont déjà passés à la 3D.
             </h2>
             <p className="text-white/90 text-sm sm:text-base mt-3 font-light leading-relaxed">

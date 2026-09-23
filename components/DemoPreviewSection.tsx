@@ -23,10 +23,10 @@ export default function DemoPreviewSection() {
     <section className="py-15 bg-[#050608] text-center">
       <div className="max-w-5xl px-5 lg:px-0 mx-auto">
         {/* Header */}
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight mb-3">
+        <h2 className="text-3xl lg:text-4xl font-semibold text-white tracking-tight mb-3">
           À voir pour y croire
         </h2>
-        <p className="text-sm sm:text-base text-[#8e94a0] max-w-xl mx-auto mb-10 leading-relaxed font-light">
+        <p className="text-sm sm:text-base text-[#A19E9B] max-w-3xl mx-auto mb-10 leading-relaxed font-light">
           Une vraie visite Vortex 3D tours, intégrée exactement comme elle le
           serait sur votre propre site.
         </p>
@@ -81,7 +81,7 @@ export default function DemoPreviewSection() {
               </button>
 
               {!isPlaying && (
-                <p className="text-xs sm:text-sm text-[#8e94a0] font-normal tracking-wide bg-black/50 px-4 py-1.5 rounded-full border border-white/5 backdrop-blur-md">
+                <p className="text-xs sm:text-sm text-[#A19E9B] font-normal tracking-wide bg-black/50 px-4 py-1.5 rounded-full border border-white/5 backdrop-blur-md">
                   Cliquez pour explorer la visite interactive
                 </p>
               )}

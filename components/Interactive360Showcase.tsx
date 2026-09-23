@@ -207,7 +207,7 @@ export default function Interactive360Showcase() {
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-2 rounded-full border border-terracotta/20 inline-flex items-center gap-2">
             Expérience Interactive
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mt-4 mb-4 leading-tight">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-white mt-4 mb-4 leading-tight">
             Visite Virtuelle 360° en Direct
           </h2>
           <p className="text-[#A19E9B] text-base font-light">
@@ -396,7 +396,7 @@ export default function Interactive360Showcase() {
                       <X className="w-4 h-4" />
                     </button>
                   </div>
-                  <h4 className="font-serif text-lg font-bold text-white mb-1.5">
+                  <h4 className=" text-lg font-bold text-white mb-1.5">
                     {activeHotspot.title}
                   </h4>
                   <p className="text-xs text-[#A19E9B] font-light leading-relaxed mb-4">

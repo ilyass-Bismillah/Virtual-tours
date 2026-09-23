@@ -95,7 +95,7 @@ export default function ContactEstimationForm() {
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracotta/10 border border-terracotta/20 text-terracotta text-xs font-semibold uppercase tracking-wider mb-6">
             Contactez-nous
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight text-center">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-white leading-tight text-center">
             Commençons Votre Projet
           </h2>
           <p className="text-[#A19E9B] font-light text-lg leading-relaxed text-center">
@@ -107,7 +107,7 @@ export default function ContactEstimationForm() {
           {/* Left Column: Office info & Availability */}
           <div className="lg:col-span-5 flex flex-col justify-between h-full">
             <div>
-              <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-3xl font-semibold text-white mb-6 leading-tight">
                 Entrons en Contact
               </h2>
               <p className="text-[#A19E9B] font-light text-lg leading-relaxed mb-8">
@@ -196,7 +196,7 @@ export default function ContactEstimationForm() {
                     <div className="w-20 h-20 rounded-full bg-terracotta/20 border border-terracotta text-terracotta flex items-center justify-center mx-auto mb-6">
                       <Check className="w-10 h-10" />
                     </div>
-                    <h4 className="font-serif text-3xl font-bold text-white mb-2">
+                    <h4 className=" text-3xl font-bold text-white mb-2">
                       Demande Reçue avec Succès !
                     </h4>
                     <p className="text-sm text-[#A19E9B] max-w-md mx-auto mb-8 font-light">

@@ -44,7 +44,7 @@ export default function HeroSection() {
                 l&apos;hôtellerie et le commerce
               </span>
             </div>
-            <h1 className="font-serif text-5xl sm:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight bg-linear-to-b from-white from-5% via-pink-300 via-80% to-pink-500 to-100% text-transparent bg-clip-text leading-[1.1] mb-6">
               Faites entrer votre espace dans le futur de la vente.
             </h1>
 

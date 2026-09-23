@@ -29,7 +29,7 @@ export default function Navbar({ onBookDemoClick }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { name: "Accueil", href: "/" },
+    { name: "Accueil", href: "#hero" },
     { name: "Services", href: "#services" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Showcase 360°", href: "#showcase" },

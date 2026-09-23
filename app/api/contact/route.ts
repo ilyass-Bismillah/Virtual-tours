@@ -30,7 +30,7 @@ export async function POST(req: Request) {
       subject: `Nouvelle demande démo 3D : ${nomComplet} (${typeDactivité})`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #1a1a1a; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #eaeaea; border-radius: 12px;">
-          <h2 style="color: #0F0E0E; border-bottom: 2px solid #22d3ee; padding-bottom: 10px; margin-top: 0;">
+          <h2 style="color: #0F0E0E; border-bottom: 2px solid #E72D87; padding-bottom: 10px; margin-top: 0;">
             Nouvelle Demande de Visite 3D
           </h2>
           <p style="font-size: 14px; color: #666; margin-bottom: 20px;">
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
             </tr>
             <tr style="border-bottom: 1px solid #f0f0f0;">
               <td style="padding: 10px 0; font-weight: bold; color: #555;">Email professionnel :</td>
-              <td style="padding: 10px 0; color: #111;"><a href="mailto:${email}" style="color: #0284c7; text-decoration: none;">${email}</a></td>
+              <td style="padding: 10px 0; color: #111;"><a href="mailto:${email}" style="color: #111; text-decoration: none;">${email}</a></td>
             </tr>
             <tr style="border-bottom: 1px solid #f0f0f0;">
               <td style="padding: 10px 0; font-weight: bold; color: #555;">Téléphone :</td>
@@ -53,14 +53,14 @@ export async function POST(req: Request) {
             <tr style="border-bottom: 1px solid #f0f0f0;">
               <td style="padding: 10px 0; font-weight: bold; color: #555;">Type d'activité :</td>
               <td style="padding: 10px 0;">
-                <span style="background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: bold;">
+                <span style="background: #f8fafc; color: #E72D87; padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: bold;">
                   ${typeDactivité}
                 </span>
               </td>
             </tr>
           </table>
 
-          <div style="background: #f8fafc; border-left: 4px solid #22d3ee; padding: 12px 16px; border-radius: 6px; font-size: 13px; color: #475569;">
+          <div style="background: #f8fafc; border-left: 4px solid #E72D87; padding: 12px 16px; border-radius: 6px; font-size: 13px; color: #475569;">
             Délai d'engagement : Réponse attendue sous 24 à 48h
           </div>
         </div>

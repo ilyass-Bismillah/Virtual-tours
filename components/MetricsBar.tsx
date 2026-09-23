@@ -85,7 +85,7 @@ export default function MetricsBar() {
               className="flex flex-col items-center justify-center text-center"
             >
               {/* Chiffre clé + Suffixe coloré */}
-              <div className="flex items-baseline justify-center font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-white tracking-tight leading-none mb-3.5 select-none">
+              <div className="flex items-baseline justify-center  text-4xl sm:text-5xl lg:text-6xl font-normal text-white tracking-tight leading-none mb-3.5 select-none">
                 <Counter target={stat.value} />
                 <span className="text-terracotta ml-1 font-sans font-semibold text-3xl sm:text-4xl lg:text-5xl">
                   {stat.suffix}

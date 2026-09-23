@@ -3,15 +3,15 @@ import { Box, TrendingUp, Link2 } from "lucide-react";
 const features = [
   {
     icon: Box,
-    iconColor: "text-rose-400",
-    iconBg: "bg-rose-950/40 border-rose-800/30",
+    iconColor: "text-pink-400",
+    iconBg: "bg-pink-950/40 border-pink-800/30",
     title: "Réalité immersive",
     description:
       "Vos visiteurs se déplacent dans un espace à l'échelle réelle, vérifient les perspectives et ressentent la circulation d'une pièce — bien avant de réserver une visite.",
   },
   {
     icon: TrendingUp,
-    iconColor: "text-pink-500",
+    iconColor: "text-pink-400",
     iconBg: "bg-pink-950/40 border-pink-800/30",
     title: "Ventes boostées",
     description:
@@ -19,8 +19,8 @@ const features = [
   },
   {
     icon: Link2,
-    iconColor: "text-fuchsia-400",
-    iconBg: "bg-fuchsia-950/40 border-fuchsia-800/30",
+    iconColor: "text-pink-400",
+    iconBg: "bg-pink-950/40 border-pink-800/30",
     title: "Intégration fluide",
     description:
       "Intégrez votre visite sur votre site, votre bio Instagram, WhatsApp ou votre fiche Google Business en un clic. Aucun plugin, aucun développeur requis.",
@@ -30,11 +30,11 @@ const features = [
 export default function FeaturesGrid() {
   return (
     <div className="2xl:max-w-7xl lg:max-w-6xl md:max-w-3xl mx-auto py-15 px-5 lg:px-0">
-      <div className="flex flex-col md:flex-row justify-between py-10 space-y-3 md:space-y-0">
-        <h2 className="text-3xl max-w-lg">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight leading-[1.15] max-w-xl">
           Pourquoi les équipes font passer leurs annonces en 3D
         </h2>
-        <p className="text-gray-400 max-w-lg">
+        <p className="text-sm sm:text-base text-[#A19E9B] max-w-sm md:text-left leading-relaxed font-light">
           Les photos classiques demandent à imaginer. Une visite Vortex 3D tours
           permet de vivre l&apos;expérience — et cela change la vitesse de
           décision.
@@ -62,7 +62,7 @@ export default function FeaturesGrid() {
                 {item.title}
               </h3>
 
-              <p className="text-sm text-[#8c9096] leading-relaxed font-normal">
+              <p className="text-sm text-[#A19E9B] leading-relaxed font-normal">
                 {item.description}
               </p>
             </div>

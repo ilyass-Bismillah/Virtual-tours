@@ -61,7 +61,7 @@ export default function FAQSection() {
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-2 rounded-full border border-terracotta/20 inline-flex items-center gap-2">
             FAQ
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mt-4 mb-4 leading-tight">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-white mt-4 mb-4 leading-tight">
             Questions Fréquentes
           </h2>
           <p className="text-[#A19E9B] text-base font-light">
@@ -91,7 +91,7 @@ export default function FAQSection() {
                     <span className="text-[10px] uppercase tracking-widest text-terracotta block mb-1 font-medium">
                       {faq.category}
                     </span>
-                    <h3 className="font-serif text-lg sm:text-xl font-bold text-white">
+                    <h3 className="text-lg font-medium text-white">
                       {faq.question}
                     </h3>
                   </div>

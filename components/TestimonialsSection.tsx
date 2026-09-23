@@ -52,7 +52,7 @@ export default function TestimonialsSection() {
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-1 rounded-full border border-terracotta/20">
             Témoignages
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mt-4 mb-4 leading-tight">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-white mt-4 mb-4 leading-tight">
             Ce Que Disent Nos Partenaires
           </h2>
           <p className="text-[#A19E9B] text-base font-light">
@@ -102,7 +102,7 @@ export default function TestimonialsSection() {
                       className="w-12 h-12 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="font-serif text-base font-bold text-white flex items-center gap-1.5">
+                      <h4 className=" text-base font-bold text-white flex items-center gap-1.5">
                         {item.author}
                       </h4>
                       <p className="text-xs text-[#A19E9B] font-light">

@@ -154,7 +154,7 @@ export default function ServicesGrid() {
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-1 rounded-full border border-terracotta/20">
             Nos Services
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mt-4 mb-6 leading-tight">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-white mt-4 mb-6 leading-tight">
             Ce Que Nous Proposons
           </h2>
           <p className="text-[#A19E9B] text-base sm:text-lg font-light">
@@ -189,7 +189,7 @@ export default function ServicesGrid() {
                     {service.tagline}
                   </span>
 
-                  <h3 className="font-serif text-2xl font-bold text-white mt-1 mb-3 group-hover:text-white transition-colors">
+                  <h3 className="text-xl font-semibold text-white mt-1 mb-3 group-hover:text-white transition-colors">
                     {service.title}
                   </h3>
 
@@ -252,7 +252,7 @@ export default function ServicesGrid() {
                   {selectedService.tagline}
                 </span>
 
-                <h3 className="font-serif text-3xl font-bold text-white mt-3 mb-4">
+                <h3 className=" text-3xl font-bold text-white mt-3 mb-4">
                   {selectedService.title}
                 </h3>
 

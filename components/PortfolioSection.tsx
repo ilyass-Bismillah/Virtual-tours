@@ -104,7 +104,7 @@ export default function GallerySection() {
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold bg-terracotta/10 px-4 py-1 rounded-full border border-terracotta/20">
             Nos Réalisations
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight mt-4">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-white leading-tight mt-4">
             Projets Récents
           </h2>
           <p className="text-[#A19E9B] text-base sm:text-lg font-light">
@@ -166,7 +166,7 @@ export default function GallerySection() {
 
               {/* Bottom Text Content */}
               <div className="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
-                <h3 className="font-serif text-xl sm:text-2xl font-normal text-white leading-snug">
+                <h3 className=" text-xl sm:text-2xl font-normal text-white leading-snug">
                   {project.title}
                 </h3>
                 <p className="text-xs text-[#B5B2AF] font-light mt-1">
@@ -219,7 +219,7 @@ export default function GallerySection() {
 
               {/* Lightbox Caption */}
               <div className="absolute bottom-0 inset-x-0 p-6 bg-linear-to-t from-black/90 via-black/50 to-transparent">
-                <h4 className="font-serif text-2xl text-white">
+                <h4 className=" text-2xl text-white">
                   {selectedImage.title}
                 </h4>
                 <p className="text-sm text-[#A19E9B] mt-1 font-light">

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const useCases = [
   {
     title: "Immobilier",
@@ -6,6 +8,7 @@ const useCases = [
     tag: "Moins de rendez-vous manqués, ventes plus rapides",
     tagStyles: "bg-pink-950/40 text-pink-400 border-pink-800/40",
     gradient: "from-pink-950/40 via-pink-900/10 to-transparent",
+    image: "/immobilie.jpg"
   },
   {
     title: "Hôtellerie",
@@ -14,6 +17,7 @@ const useCases = [
     tag: "Des réservations directes, pas juste des clics",
     tagStyles: "bg-pink-950/40 text-pink-400 border-pink-800/40",
     gradient: "from-pink-950/40 via-pink-900/10 to-transparent",
+    image: "/hotellerie.jpg"
   },
   {
     title: "Commerce",
@@ -22,6 +26,7 @@ const useCases = [
     tag: "Transformez les curieux en visiteurs",
     tagStyles: "bg-pink-950/40 text-pink-400 border-pink-800/40",
     gradient: "from-pink-950/40 via-pink-900/10 to-transparent",
+    image: "/commerce.jpg"
   },
 ];
 
@@ -48,7 +53,7 @@ export default function UseCasesSection() {
               className="group rounded-3xl bg-[#0b0d10] border border-white/5 overflow-hidden flex flex-col justify-between hover:border-white/15 transition-colors duration-300"
             >
               {/* Top Visual Area with Subtle Ambient Gradient */}
-              <div
+              <Image src={card.image} alt={card.title} width={500} height={100}
                 className={`relative h-60 w-full bg-linear-to-b ${card.gradient}`}
               />
 

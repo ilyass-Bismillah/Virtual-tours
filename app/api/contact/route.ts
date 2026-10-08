@@ -24,8 +24,12 @@ export async function POST(req: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "Virtual Tours <onboarding@resend.dev>",
-      to: ["ilyassbis@gmail.com"],
+      from: "Virtual Tours <contact@digest-media.ma>",
+      to: [
+        "contact@digest-media.ma",
+        "ussamaerraji@digest-media.ma",
+        "ilyassbis@gmail.com",
+      ],
       replyTo: email,
       subject: `Nouvelle demande démo 3D : ${nomComplet} (${typeDactivité})`,
       html: `

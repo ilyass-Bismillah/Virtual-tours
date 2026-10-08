@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "Virtual Tours <contact@digest-media.ma>",
+      from: "Virtual Tours <contact@vortex3dtour.com>",
       to: [
         "contact@digest-media.ma",
         "ussamaerraji@digest-media.ma",

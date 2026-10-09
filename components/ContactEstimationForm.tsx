@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Send,
@@ -12,6 +12,7 @@ import {
   Check,
   Lock,
 } from "lucide-react";
+import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -38,14 +39,23 @@ export default function ContactEstimationForm() {
     typeDactivité: "",
   });
 
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance | null>(null);
+
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true);
     setErrorMessage("");
+
+    if (!turnstileToken) {
+      setErrorMessage("Veuillez valider le captcha Cloudflare.");
+      return;
+    }
+
+    setIsLoading(true);
 
     try {
       const res = await fetch("/api/contact", {
@@ -53,7 +63,10 @@ export default function ContactEstimationForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          turnstileToken,
+        }),
       });
 
       const data = await res.json();
@@ -71,12 +84,15 @@ export default function ContactEstimationForm() {
         telephone: "",
         typeDactivité: "",
       });
+      setTurnstileToken(null);
+      turnstileRef.current?.reset();
     } catch (err) {
       if (err instanceof Error) {
         setErrorMessage(err.message);
       } else {
         setErrorMessage("Échec de l'envoi du message. Veuillez réessayer.");
       }
+      turnstileRef.current?.reset();
     } finally {
       setIsLoading(false);
     }
@@ -314,11 +330,28 @@ export default function ContactEstimationForm() {
                       </div>
                     </div>
 
+                    {/* Cloudflare Turnstile Widget */}
+                    <div className="flex justify-start">
+                      <Turnstile
+                        ref={turnstileRef}
+                        siteKey={
+                          process.env
+                            .NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY || ""
+                        }
+                        onSuccess={(token) => setTurnstileToken(token)}
+                        onError={() => setTurnstileToken(null)}
+                        onExpire={() => setTurnstileToken(null)}
+                        options={{
+                          theme: "auto",
+                        }}
+                      />
+                    </div>
+
                     {/* Submit Button */}
                     <Button
                       type="submit"
                       variant={"linear"}
-                      disabled={isLoading}
+                      disabled={isLoading || !turnstileToken}
                       className="w-full py-7 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed text-white text-base font-semibold transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
                     >
                       {isLoading ? (

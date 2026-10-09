@@ -4,18 +4,55 @@ import { Resend } from "resend";
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.RESEND_API_KEY;
+    const turnstileSecret = process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY;
+
     if (!apiKey) {
       return NextResponse.json(
-        { error: "La clé API n'est pas configurée." },
+        { error: "La clé API Resend n'est pas configurée." },
         { status: 500 }
       );
     }
 
-    const resend = new Resend(apiKey);
-    const body = await req.json();
-    const { nomComplet, email, telephone, typeDactivité } = body;
+    if (!turnstileSecret) {
+      return NextResponse.json(
+        { error: "La clé secrète Turnstile n'est pas configurée." },
+        { status: 500 }
+      );
+    }
 
-    // Validation des champs obligatoires
+    const body = await req.json();
+    const { nomComplet, email, telephone, typeDactivité, turnstileToken } = body;
+
+    // 1. Verification Cloudflare Turnstile Token
+    if (!turnstileToken) {
+      return NextResponse.json(
+        { error: "Veuillez valider le captcha Cloudflare." },
+        { status: 400 }
+      );
+    }
+
+    const turnstileFormData = new FormData();
+    turnstileFormData.append("secret", turnstileSecret);
+    turnstileFormData.append("response", turnstileToken);
+
+    const turnstileRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        body: turnstileFormData,
+      }
+    );
+
+    const turnstileOutcome = await turnstileRes.json();
+
+    if (!turnstileOutcome.success) {
+      return NextResponse.json(
+        { error: "Échec de validation de sécurité (Captcha invalide)." },
+        { status: 403 }
+      );
+    }
+
+    // 2. Validation des champs obligatoires
     if (!nomComplet || !email || !telephone || !typeDactivité) {
       return NextResponse.json(
         { error: "Veuillez remplir tous les champs obligatoires." },
@@ -23,6 +60,8 @@ export async function POST(req: Request) {
       );
     }
 
+    // 3. Envoi de l'email via Resend
+    const resend = new Resend(apiKey);
     const { data, error } = await resend.emails.send({
       from: "Virtual Tours <contact@vortex3dtour.com>",
       to: [
